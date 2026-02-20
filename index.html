@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Wasim Mahmood Mia — Profile</title>
 
+<style id="antiClickjack">body { display: none !important; }</style>
+<script>
+  if (self === top) {
+    var antiClickjack = document.getElementById("antiClickjack");
+    antiClickjack.parentNode.removeChild(antiClickjack);
+  } else {
+    top.location = self.location;
+  }
+</script>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -16,6 +26,11 @@
   padding: 0;
   font-family: system-ui, -apple-system, Inter, sans-serif;
 }
+
+/* ইউআই/ইউএক্স: কাস্টম স্ক্রলবার */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #6b4bff, #00f2fe); border-radius: 10px; }
 
 body {
   min-height: 100vh;
@@ -83,7 +98,6 @@ body::after {
   pointer-events: none;
 }
 
-/* Liquid background animation */
 @keyframes gradientMove {
   0% { background-position: 0% 50% }
   50% { background-position: 100% 50% }
@@ -116,7 +130,6 @@ body::after {
   border: 1px solid rgba(255, 255, 255, .1);
 }
 
-/* Header */
 .header {
   display: flex;
   gap: 20px;
@@ -125,7 +138,6 @@ body::after {
   position: relative;
 }
 
-/* Activity Status (Discord like) */
 .image-protection {
   position: relative;
   display: inline-block;
@@ -153,7 +165,7 @@ body::after {
   100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(35, 165, 89, 0); }
 }
 
-/* Prevent image download */
+/* Image styling (Canvas removed, back to IMG with protection) */
 .header img {
   width: 95px;
   height: 95px;
@@ -179,382 +191,93 @@ body::after {
   z-index: 1;
 }
 
-.name-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: nowrap;
+.name-badge { display: inline-flex; align-items: center; gap: 6px; flex-wrap: nowrap; }
+.name { font-size: 26px; font-weight: 800; white-space: nowrap; cursor: pointer; }
+.badge { background: #1877f2; color: #fff; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+.tagline { opacity: .9; margin-top: 4px; }
+
+.visitor-counter { display: inline-flex; align-items: center; gap: 6px; background: rgba(255, 255, 255, 0.15); padding: 4px 10px; border-radius: 20px; font-size: 13px; margin-top: 8px; border: 1px solid rgba(255,255,255,0.2); }
+
+.hire-me-btn { margin-left: auto; padding: 10px 20px; border-radius: 20px; border: none; background: linear-gradient(135deg, #00f2fe, #4facfe); color: white; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4); transition: all 0.3s ease; z-index: 10; }
+.hire-me-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 6px 20px rgba(0, 242, 254, 0.6); }
+
+.top-controls { position: absolute; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 10000; }
+.icon-btn { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px; transition: all 0.3s ease; color: white; }
+.icon-btn:hover { background: rgba(255, 255, 255, 0.2); transform: rotate(15deg) scale(1.1); }
+.voice-active { background: #ff4b4b !important; animation: pulse 1.5s infinite; border-color: #ff4b4b; }
+
+.social { margin-top: 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+.social a { text-decoration: none; color: #fff !important; background: rgba(255, 255, 255, 0.1); border-radius: 18px; padding: 12px 14px; border: 1px solid rgba(255, 255, 255, .2); display: flex; align-items: center; gap: 10px; transition: .3s; font-weight: 600; }
+.dark-mode .social a { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, .1); }
+.social a:hover { transform: translateY(-3px); background: rgba(255, 255, 255, 0.25); }
+.dark-mode .social a:hover { background: rgba(255, 255, 255, 0.15); }
+
+.fb i { color: #1877f2 } .ig i { color: #E4405F } .tt i { color: #000 } .tg i { color: #2AABEE }
+.wa i { color: #25D366 } .tw i { color: #ffffff } .th i { color: #ff9500 } .pi i { color: #E60023 }
+.gi i { color: #000000 } .sc i { color: #FFFC00 } .lk i { color: #0077B5 } .yt i { color: #FF0000 }
+.rd i { color: #FF4500 } .dc i { color: #5865F2 } .tw i { color: #6441A4 } .ve i { color: #1AB7EA }
+.li i { color: #00B900 } .we i { color: #07C160 } .vi i { color: #7360f2 } .sk i { color: #00AFF0 }
+
+.section { margin-top: 26px; background: rgba(255, 255, 255, 0.08); border-radius: 22px; border: 1px solid rgba(255, 255, 255, .2); padding: 18px 20px; transition: all 0.3s ease; }
+.dark-mode .section { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, .1); }
+.section strong { font-size: 16px; color: #fff !important; display: block; margin-bottom: 10px; }
+.section p { opacity: .9; margin-top: 6px; color: #fff !important; line-height: 1.6; }
+
+.info-line, .location-line { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  margin-top: 6px; 
+  font-weight: 600; 
+  color: #fff !important; 
+  word-break: break-all; /* এই লাইনটি ইমেইলকে বক্সের ভেতরে রাখবে */
 }
 
-.name {
-  font-size: 26px;
-  font-weight: 800;
-  white-space: nowrap;
-}
 
-.badge {
-  background: #1877f2;
-  color: #fff;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-}
-
-.tagline {
-  opacity: .9;
-  margin-top: 4px;
-}
-
-/* Visitor Counter */
-.visitor-counter {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(255, 255, 255, 0.15);
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 13px;
-  margin-top: 8px;
-  border: 1px solid rgba(255,255,255,0.2);
-}
-
-/* Hire Me Button */
-.hire-me-btn {
-  margin-left: auto;
-  padding: 10px 20px;
-  border-radius: 20px;
-  border: none;
-  background: linear-gradient(135deg, #00f2fe, #4facfe);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4);
-  transition: all 0.3s ease;
-  z-index: 10;
-}
-.hire-me-btn:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 242, 254, 0.6);
-}
-
-/* Top Buttons (Theme & Voice) */
-.top-controls {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 10px;
-  z-index: 10000;
-}
-
-.icon-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 18px;
-  transition: all 0.3s ease;
-  color: white;
-}
-
-.icon-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: rotate(15deg) scale(1.1);
-}
-
-.voice-active {
-  background: #ff4b4b !important;
-  animation: pulse 1.5s infinite;
-  border-color: #ff4b4b;
-}
-
-/* Social grid */
-.social {
-  margin-top: 22px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 12px;
-}
-
-.social a {
-  text-decoration: none;
-  color: #fff !important;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 18px;
-  padding: 12px 14px;
-  border: 1px solid rgba(255, 255, 255, .2);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: .3s;
-  font-weight: 600;
-}
-
-.dark-mode .social a {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, .1);
-}
-
-.social a:hover {
-  transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.dark-mode .social a:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-/* Social Colors... (kept exactly as before) */
-.fb i { color: #1877f2 }
-.ig i { color: #E4405F }
-.tt i { color: #000 }
-.tg i { color: #2AABEE }
-.wa i { color: #25D366 }
-.tw i { color: #ffffff }
-.th i { color: #ff9500 }
-.pi i { color: #E60023 }
-.gi i { color: #000000 }
-.sc i { color: #FFFC00 }
-.lk i { color: #0077B5 }
-.yt i { color: #FF0000 }
-.rd i { color: #FF4500 }
-.dc i { color: #5865F2 }
-.tw i { color: #6441A4 }
-.ve i { color: #1AB7EA }
-.li i { color: #00B900 }
-.we i { color: #07C160 }
-.vi i { color: #7360f2 }
-.sk i { color: #00AFF0 }
-
-/* Sections */
-.section {
-  margin-top: 26px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 22px;
-  border: 1px solid rgba(255, 255, 255, .2);
-  padding: 18px 20px;
-  transition: all 0.3s ease;
-}
-
-.dark-mode .section {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, .1);
-}
-
-.section strong {
-  font-size: 16px;
-  color: #fff !important;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.section p {
-  opacity: .9;
-  margin-top: 6px;
-  color: #fff !important;
-  line-height: 1.6;
-}
-
-/* Contact & Location line */
-.info-line, .location-line {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 6px;
-  font-weight: 600;
-  color: #fff !important;
-}
-
-/* Skills Progress */
 .skill { margin: 15px 0; }
-.skill-name {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
-  font-weight: 600;
-}
-.progress-bar {
-  height: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  overflow: hidden;
-}
-.progress-bar div {
-  height: 100%;
-  background: linear-gradient(90deg, #6b4bff, #ff8a4b);
-  border-radius: 4px;
-  width: 0;
-  transition: width 1.5s ease-in-out;
-}
+.skill-name { display: flex; justify-content: space-between; margin-bottom: 5px; font-weight: 600; }
+.progress-bar { height: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; overflow: hidden; }
+.progress-bar div { height: 100%; background: linear-gradient(90deg, #6b4bff, #ff8a4b); border-radius: 4px; width: 0; transition: width 1.5s ease-in-out; }
 
-/* Skills Grid */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 10px;
-  margin-top: 15px;
-}
-.skill-item {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 10px 12px;
-  border-radius: 10px;
-  text-align: center;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, .2);
-}
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-top: 15px; }
+.skill-item { background: rgba(255, 255, 255, 0.1); padding: 10px 12px; border-radius: 10px; text-align: center; font-weight: 600; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, .2); }
 
-/* Glassmorphism Form Enhanced */
-form {
-  margin-top: 12px;
-  display: grid;
-  gap: 12px;
-}
-
-.glass-input {
-  padding: 14px 16px;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  color: #fff !important;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  user-select: text;
-  -webkit-user-select: text;
-  outline: none;
-}
-
+form { margin-top: 12px; display: grid; gap: 12px; }
+.glass-input { padding: 14px 16px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); color: #fff !important; font-size: 16px; transition: all 0.3s ease; user-select: text; -webkit-user-select: text; outline: none; }
 .glass-input::placeholder { color: rgba(255, 255, 255, 0.6); }
+.glass-input:focus { background: rgba(255, 255, 255, 0.1); border-color: #00f2fe; box-shadow: 0 0 15px rgba(0, 242, 254, 0.3); transform: translateY(-2px); }
+.dark-mode .glass-input { background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.15); }
 
-.glass-input:focus {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #00f2fe;
-  box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
-  transform: translateY(-2px);
-}
+.glass-btn { padding: 14px; border-radius: 16px; border: 0; font-weight: 700; cursor: pointer; background: linear-gradient(135deg, #665bff, #ff7b32); color: #fff !important; transition: .3s; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; }
+.glass-btn:hover { box-shadow: 0 0 20px #ff7b32, 0 0 30px #665bff; transform: translateY(-3px); }
 
-.dark-mode .glass-input {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
+footer { text-align: center; margin-top: 22px; opacity: .8; font-size: 13px; color: #fff !important; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, .2); }
 
-.glass-btn {
-  padding: 14px;
-  border-radius: 16px;
-  border: 0;
-  font-weight: 700;
-  cursor: pointer;
-  background: linear-gradient(135deg, #665bff, #ff7b32);
-  color: #fff !important;
-  transition: .3s;
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+.reveal { opacity: 0; transform: translateY(32px) scale(.97); transition: .7s cubic-bezier(.16, .84, .44, 1); }
+.reveal.visible { opacity: 1; transform: none; }
 
-.glass-btn:hover {
-  box-shadow: 0 0 20px #ff7b32, 0 0 30px #665bff;
-  transform: translateY(-3px);
-}
+.back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: #6b4bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 10000; border: none; color: white; font-size: 20px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
+.back-to-top.visible { opacity: 1; visibility: visible; }
 
-/* Footer */
-footer {
-  text-align: center;
-  margin-top: 22px;
-  opacity: .8;
-  font-size: 13px;
-  color: #fff !important;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, .2);
-}
-
-/* Scroll animation */
-.reveal {
-  opacity: 0;
-  transform: translateY(32px) scale(.97);
-  transition: .7s cubic-bezier(.16, .84, .44, 1);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
-
-/* Back to Top */
-.back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  background: #6b4bff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  z-index: 10000;
-  border: none;
-  color: white;
-  font-size: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.back-to-top.visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Security Overlays */
-.copy-warning {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.9);
-  color: white;
-  padding: 20px 30px;
-  border-radius: 15px;
-  border: 2px solid #ff4b4b;
-  z-index: 9999;
-  display: none;
-  text-align: center;
-  font-weight: bold;
-  backdrop-filter: blur(10px);
-}
-.recording-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(45deg, rgba(255,0,0,0.05), rgba(255,0,0,0.05) 10px, rgba(0,0,0,0.05) 10px, rgba(0,0,0,0.05) 20px);
-  z-index: 9997;
-  display: none;
-  pointer-events: none;
-}
+.copy-warning { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0, 0, 0, 0.9); color: white; padding: 20px 30px; border-radius: 15px; border: 2px solid #ff4b4b; z-index: 9999; display: none; text-align: center; font-weight: bold; backdrop-filter: blur(10px); }
+.recording-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient(45deg, rgba(255,0,0,0.05), rgba(255,0,0,0.05) 10px, rgba(0,0,0,0.05) 10px, rgba(0,0,0,0.05) 20px); z-index: 9997; display: none; pointer-events: none; }
 
 @media (max-width: 768px) {
   .container { margin: 30px auto; width: 96%; }
   .social { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
   .hire-me-btn { margin-top: 15px; width: 100%; }
 }
+
+.noscript-alert { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #000; color: #fff; z-index: 999999; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; text-align: center; padding: 20px; }
 </style>
 </head>
 
 <body>
+
+<noscript>
+  <style> .container, .scroll-progress-container, canvas, .top-controls, .back-to-top { display: none !important; } </style>
+  <div class="noscript-alert">⚠️ Please Enable JavaScript to View This Secure Portfolio ⚠️</div>
+</noscript>
 
 <div class="scroll-progress-container">
   <div class="scroll-progress-bar" id="progressBar"></div>
@@ -562,7 +285,7 @@ footer {
 
 <div class="copy-warning" id="copyWarning">
   <i class="fas fa-ban" style="font-size: 40px; margin-bottom: 10px; color: #ff4b4b;"></i>
-  <p>Copying content is not allowed!</p>
+  <p>Security Alert: Action Blocked!</p>
 </div>
 <div class="recording-overlay" id="recordingOverlay"></div>
 
@@ -587,8 +310,10 @@ footer {
       </div>
       
       <div>
+        <div id="dynamicGreeting" style="font-size: 13px; font-weight: bold; color: #00f2fe; margin-bottom: 4px; letter-spacing: 1px; text-transform: uppercase;"></div>
+        
         <div class="name-badge">
-          <div class="name">Wasim Mahmood</div>
+          <div class="name" id="easterEggTrigger" title="Click me 5 times!">Wasim Mahmood</div>
           <div class="badge">✔</div>
         </div>
         <div class="tagline">Creative Developer & Tech Enthusiast</div>
@@ -631,8 +356,8 @@ footer {
 
     <div class="section reveal">
       <strong>Contact</strong>
-      <div class="info-line"><i class="fa-solid fa-phone"></i><a href="tel:01620434794" style="color:inherit;text-decoration:none">01620434794</a></div>
-      <div class="info-line"><i class="fa-solid fa-envelope"></i><span>wasimmahmoodmia@hotmail.com</span></div>
+      <div class="info-line"><i class="fa-solid fa-phone"></i><a id="safePhone" href="#" style="color:inherit;text-decoration:none">Loading...</a></div>
+      <div class="info-line"><i class="fa-solid fa-envelope"></i><span id="safeEmail">Loading...</span></div>
     </div>
 
     <div class="section reveal">
@@ -692,6 +417,9 @@ footer {
       <form id="contactForm">
         <input class="glass-input" placeholder="Your Name" id="name" required>
         <input class="glass-input" placeholder="Your Email" type="email" id="email" required>
+        
+        <input type="text" id="honeypot" style="display:none;" tabindex="-1" autocomplete="off" placeholder="Leave this empty">
+
         <textarea class="glass-input" rows="4" placeholder="Type your message here..." id="message" required></textarea>
         <button class="glass-btn" type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
       </form>
@@ -709,50 +437,65 @@ footer {
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// =================== 1. SCROLL PROGRESS BAR ===================
+// =================== DYNAMIC GREETING ===================
+const hr = new Date().getHours();
+let greeting = "Good Evening 🌙";
+if (hr < 12) greeting = "Good Morning ☀️";
+else if (hr < 18) greeting = "Good Afternoon 🌤️";
+document.getElementById('dynamicGreeting').innerText = greeting;
+
+// =================== ANTI-SCRAPING (HIDDEN CONTACT INFO) ===================
+const pD = atob('MDE2MjA0MzQ3OTQ=');
+const eD = atob('d2FzaW1tYWhtb29kbWlhQGhvdG1haWwuY29t');
+const safePhoneEl = document.getElementById('safePhone');
+safePhoneEl.innerText = pD;
+safePhoneEl.href = 'tel:' + pD;
+document.getElementById('safeEmail').innerText = eD;
+
+// =================== EASTER EGG (MINI GAME / MATRIX EFFECT) ===================
+let easterEggCount = 0;
+document.getElementById('easterEggTrigger').addEventListener('click', function() {
+  easterEggCount++;
+  if(easterEggCount === 5) {
+    alert("💻 Easter Egg Unlocked! Matrix Hacker Mode Activated!");
+    document.body.style.background = "#000";
+    document.body.style.color = "#0f0";
+    document.querySelectorAll('.card, .section, .social a').forEach(el => {
+      el.style.border = "1px solid #0f0";
+      el.style.background = "rgba(0, 255, 0, 0.05)";
+    });
+    document.querySelectorAll('.glass-input, .glass-btn, .status-badge').forEach(el => {
+      el.style.borderColor = "#0f0";
+      el.style.boxShadow = "0 0 10px #0f0";
+    });
+    easterEggCount = 0;
+  }
+});
+
+// =================== SCROLL PROGRESS & COUNTER ===================
 window.onscroll = function() {
   let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   let scrolled = (winScroll / height) * 100;
   document.getElementById("progressBar").style.width = scrolled + "%";
   
-  // Back to top button logic
   const backToTop = document.getElementById('backToTop');
-  if (window.pageYOffset > 300) {
-    backToTop.classList.add('visible');
-  } else {
-    backToTop.classList.remove('visible');
-  }
+  if (window.pageYOffset > 300) { backToTop.classList.add('visible'); } 
+  else { backToTop.classList.remove('visible'); }
 };
 
-// =================== 2. REAL VISITOR COUNTER ===================
-// Using counterapi.dev for free reliable counting
 fetch('https://api.counterapi.dev/v1/wasim_portfolio/visits/up')
   .then(res => res.json())
-  .then(data => {
-    document.getElementById('visitCount').innerText = data.count;
-  })
-  .catch(err => {
-    // Fallback if API is blocked by browser adblockers
-    document.getElementById('visitCount').innerText = "1,204+";
-  });
+  .then(data => { document.getElementById('visitCount').innerText = data.count; })
+  .catch(err => { document.getElementById('visitCount').innerText = "1,204+"; });
 
-
-// =================== 3. HIRE ME CONFETTI EFFECT ===================
+// =================== HIRE ME CONFETTI ===================
 document.getElementById('hireMeBtn').addEventListener('click', function() {
-  confetti({
-    particleCount: 150,
-    spread: 70,
-    origin: { y: 0.6 },
-    colors: ['#00f2fe', '#4facfe', '#6b4bff', '#ff8a4b']
-  });
-  
-  // Scroll to contact form
+  confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#00f2fe', '#4facfe', '#6b4bff', '#ff8a4b'] });
   document.getElementById('contactSection').scrollIntoView({ behavior: 'smooth' });
 });
 
-
-// =================== 4. SMART VOICE COMMANDS ===================
+// =================== SMART VOICE COMMANDS ===================
 const voiceBtn = document.getElementById('voiceToggle');
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -760,107 +503,37 @@ if(SpeechRecognition) {
   const recognition = new SpeechRecognition();
   recognition.continuous = false;
   
-  voiceBtn.addEventListener('click', () => {
-    voiceBtn.classList.add('voice-active');
-    recognition.start();
-  });
-
+  voiceBtn.addEventListener('click', () => { voiceBtn.classList.add('voice-active'); recognition.start(); });
   recognition.onresult = (event) => {
     const command = event.results[0][0].transcript.toLowerCase();
     voiceBtn.classList.remove('voice-active');
-    
-    if(command.includes('dark') || command.includes('night')) {
-      document.body.classList.add('dark-mode');
-      themeIcon.className = 'fas fa-sun';
-      localStorage.setItem('theme', 'dark');
-    } 
-    else if(command.includes('light') || command.includes('day')) {
-      document.body.classList.remove('dark-mode');
-      themeIcon.className = 'fas fa-moon';
-      localStorage.setItem('theme', 'light');
-    }
-    else if(command.includes('scroll down') || command.includes('down')) {
-      window.scrollBy({ top: 500, behavior: 'smooth' });
-    }
-    else if(command.includes('contact') || command.includes('hire')) {
-      document.getElementById('contactSection').scrollIntoView({ behavior: 'smooth' });
-    }
+    if(command.includes('dark') || command.includes('night')) { document.body.classList.add('dark-mode'); localStorage.setItem('theme', 'dark'); } 
+    else if(command.includes('light') || command.includes('day')) { document.body.classList.remove('dark-mode'); localStorage.setItem('theme', 'light'); }
+    else if(command.includes('scroll down') || command.includes('down')) { window.scrollBy({ top: 500, behavior: 'smooth' }); }
+    else if(command.includes('contact') || command.includes('hire')) { document.getElementById('contactSection').scrollIntoView({ behavior: 'smooth' }); }
   };
+  recognition.onerror = () => { voiceBtn.classList.remove('voice-active'); alert("Voice recognition failed. Try again!"); };
+} else { voiceBtn.style.display = 'none'; }
 
-  recognition.onerror = () => {
-    voiceBtn.classList.remove('voice-active');
-    alert("Voice recognition failed. Try again!");
-  };
-} else {
-  voiceBtn.style.display = 'none'; // Hide if browser doesn't support
-}
-
-
-// =================== 5. TIME-BASED UI & THEME TOGGLE ===================
+// =================== TIME-BASED THEME TOGGLE ===================
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon = themeToggle.querySelector('i');
-
-// Auto Day-Night Logic
 function applyAutoTheme() {
   const savedTheme = localStorage.getItem('theme');
   if (!savedTheme) {
-    const hour = new Date().getHours();
-    // 6 PM to 6 AM is Dark Mode
-    if (hour >= 18 || hour < 6) {
-      document.body.classList.add('dark-mode');
-      themeIcon.className = 'fas fa-sun';
-    } else {
-      document.body.classList.remove('dark-mode');
-      themeIcon.className = 'fas fa-moon';
-    }
-  } else if (savedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-    themeIcon.className = 'fas fa-sun';
-  }
+    if (hr >= 18 || hr < 6) { document.body.classList.add('dark-mode'); themeIcon.className = 'fas fa-sun'; } 
+    else { document.body.classList.remove('dark-mode'); themeIcon.className = 'fas fa-moon'; }
+  } else if (savedTheme === 'dark') { document.body.classList.add('dark-mode'); themeIcon.className = 'fas fa-sun'; }
 }
 applyAutoTheme();
 
 themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
-  if (document.body.classList.contains('dark-mode')) {
-    themeIcon.className = 'fas fa-sun';
-    localStorage.setItem('theme', 'dark');
-  } else {
-    themeIcon.className = 'fas fa-moon';
-    localStorage.setItem('theme', 'light');
-  }
+  if (document.body.classList.contains('dark-mode')) { themeIcon.className = 'fas fa-sun'; localStorage.setItem('theme', 'dark'); } 
+  else { themeIcon.className = 'fas fa-moon'; localStorage.setItem('theme', 'light'); }
 });
 
-
-// =================== SECURITY ENHANCEMENTS (UNCHANGED) ===================
-function showCopyWarning() {
-  const warning = document.getElementById('copyWarning');
-  warning.style.display = 'block';
-  setTimeout(() => { warning.style.display = 'none'; }, 2000);
-}
-function activateRecordingOverlay() {
-  const overlay = document.getElementById('recordingOverlay');
-  overlay.style.display = 'block';
-  setTimeout(() => { overlay.style.display = 'none'; }, 3000);
-}
-
-document.addEventListener('selectstart', e => { if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') { e.preventDefault(); showCopyWarning(); return false; }});
-document.addEventListener('copy', e => { e.preventDefault(); showCopyWarning(); return false; });
-document.addEventListener('cut', e => { e.preventDefault(); showCopyWarning(); return false; });
-document.addEventListener('contextmenu', e => { if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') { e.preventDefault(); showCopyWarning(); return false; }});
-document.addEventListener('dragstart', e => { if (e.target.tagName === 'IMG' || e.target.tagName === 'A') { e.preventDefault(); return false; }});
-document.addEventListener('keydown', e => {
-  if (e.ctrlKey && ['c','v','x','a','s','p'].includes(e.key.toLowerCase()) && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') { e.preventDefault(); showCopyWarning(); return false; }
-  if (e.key === 'PrintScreen') { e.preventDefault(); showCopyWarning(); activateRecordingOverlay(); return false; }
-  if (e.key === 'F12') { e.preventDefault(); showCopyWarning(); return false; }
-});
-setInterval(() => { if (window.mediaDevices && navigator.mediaDevices.getDisplayMedia) { activateRecordingOverlay(); } }, 5000);
-if (window.location !== window.parent.location) { window.top.location = window.location; }
-window.addEventListener('blur', () => { document.body.style.filter = 'blur(3px)'; document.body.style.transition = 'filter 0.3s ease'; });
-window.addEventListener('focus', () => { document.body.style.filter = 'none'; });
-
-
-// =================== EXISTING ANIMATIONS & FORM (UNCHANGED) ===================
+// =================== ANIMATIONS & FORM ===================
 const reveals = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver(e => {
   e.forEach(x => { 
@@ -885,14 +558,23 @@ const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 contactForm.addEventListener('submit', function(e) {
   e.preventDefault();
+  
+  if(document.getElementById('honeypot').value !== "") {
+    formMessage.textContent = "🤖 Bot activity detected. Access denied.";
+    formMessage.style.color = "#ff4b4b";
+    return;
+  }
+
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   const message = document.getElementById('message').value;
   if(!name || !email || !message) { formMessage.textContent = "Please fill all fields!"; formMessage.style.color = "#ff8a4b"; return; }
+  
   formMessage.textContent = "📧 Opening email app..."; formMessage.style.color = "#1f9bff";
   const subject = `Message from ${name} - Portfolio Website`;
   const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nSent from your portfolio website.`;
-  const mailtoLink = `mailto:wasimmahmoodmia@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const mailtoLink = `mailto:${eD}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  
   setTimeout(() => {
     window.location.href = mailtoLink;
     formMessage.textContent = "✅ Email app opened! Please send the message."; formMessage.style.color = "#25D366";
@@ -902,8 +584,7 @@ contactForm.addEventListener('submit', function(e) {
 
 const canvas = document.getElementById('particles-js');
 const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = window.innerWidth; canvas.height = window.innerHeight;
 let particles = [];
 for(let i = 0; i < 100; i++) {
   particles.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, r: Math.random() * 3 + 2, dx: (Math.random() - 0.5) * 0.5, dy: (Math.random() * 0.7) + 0.3, color: `rgba(255, 255, 255, ${Math.random() * 0.2 + 0.1})` });
@@ -921,6 +602,8 @@ function animateParticles() {
 animateParticles();
 window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
 
+// =================== SECURITY SCRIPTS ===================
+!function(){const e=document;function t(){const e=document.getElementById("copyWarning");e.style.display="block",setTimeout((()=>{e.style.display="none"}),2e3)}function o(){const e=document.getElementById("recordingOverlay");e.style.display="block",setTimeout((()=>{e.style.display="none"}),3e3)}e.addEventListener("selectstart",(e=>{"INPUT"!==e.target.tagName&&"TEXTAREA"!==e.target.tagName&&(e.preventDefault(),t())})),e.addEventListener("copy",(e=>{e.preventDefault(),t()})),e.addEventListener("cut",(e=>{e.preventDefault(),t()})),e.addEventListener("contextmenu",(e=>{"INPUT"!==e.target.tagName&&"TEXTAREA"!==e.target.tagName&&(e.preventDefault(),t())})),e.addEventListener("dragstart",(e=>{"IMG"!==e.target.tagName&&"A"!==e.target.tagName||e.preventDefault()})),e.addEventListener("keydown",(e=>{e.ctrlKey&&["c","v","x","a","s","p"].includes(e.key.toLowerCase())&&"INPUT"!==e.target.tagName&&"TEXTAREA"!==e.target.tagName&&(e.preventDefault(),t()),"PrintScreen"===e.key&&(e.preventDefault(),t(),o()),"F12"===e.key&&(e.preventDefault(),t())})),setInterval((()=>{window.mediaDevices&&navigator.mediaDevices.getDisplayMedia&&o()}),5e3),window.addEventListener("blur",(()=>{e.body.style.filter="blur(3px)",e.body.style.transition="filter 0.3s ease"})),window.addEventListener("focus",(()=>{e.body.style.filter="none"})),console.log("%cStop!","color: red; font-size: 50px; font-weight: bold; text-shadow: 2px 2px 0 #000;"),console.log("%cThis is a browser feature intended for developers.","font-size: 16px; color: #fff; background: #000; padding: 10px; border-radius: 5px;")}();
 </script>
 </body>
 </html>
