@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<meta name="description" content="Portfolio of Wasim Mahmood Mia - Creative Developer & Tech Enthusiast">
+<meta name="keywords" content="Wasim Mahmood, Developer, UI/UX, Portfolio, Bangladesh">
+<meta property="og:title" content="Wasim Mahmood Mia — Profile">
+<meta property="og:description" content="A creative mind always eager to learn something new. Explore my portfolio!">
+<meta property="og:image" content="https://i.ibb.co.com/Rkd9H4w1/IMG-8125.jpg.jpeg">
+<meta property="og:type" content="website">
+
 <title>Wasim Mahmood Mia — Profile</title>
 
 <style id="antiClickjack">body { display: none !important; }</style>
@@ -18,6 +26,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"></script>
 
 <style>
 * {
@@ -104,12 +113,21 @@ body::after {
   100% { background-position: 0% 50% }
 }
 
+/* Parallax Wrapper */
+.parallax-wrapper {
+  perspective: 1000px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .container {
   max-width: 900px;
   width: 94%;
   margin: 60px auto;
   z-index: 2;
   position: relative;
+  transform-style: preserve-3d;
 }
 
 .card {
@@ -122,7 +140,8 @@ body::after {
   box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
   z-index: 2;
   position: relative;
-  transition: all 0.3s ease;
+  transition: transform 0.1s ease-out, background 0.3s ease, border 0.3s ease;
+  transform-style: preserve-3d;
 }
 
 .dark-mode .card {
@@ -136,6 +155,7 @@ body::after {
   align-items: center;
   flex-wrap: wrap;
   position: relative;
+  transform: translateZ(30px); /* Parallax Depth */
 }
 
 .image-protection {
@@ -165,7 +185,7 @@ body::after {
   100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(35, 165, 89, 0); }
 }
 
-/* Image styling (Canvas removed, back to IMG with protection) */
+/* Image styling */
 .header img {
   width: 95px;
   height: 95px;
@@ -201,12 +221,12 @@ body::after {
 .hire-me-btn { margin-left: auto; padding: 10px 20px; border-radius: 20px; border: none; background: linear-gradient(135deg, #00f2fe, #4facfe); color: white; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4); transition: all 0.3s ease; z-index: 10; }
 .hire-me-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 6px 20px rgba(0, 242, 254, 0.6); }
 
-.top-controls { position: absolute; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 10000; }
+.top-controls { position: absolute; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 10000; transform: translateZ(40px); }
 .icon-btn { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px; transition: all 0.3s ease; color: white; }
 .icon-btn:hover { background: rgba(255, 255, 255, 0.2); transform: rotate(15deg) scale(1.1); }
 .voice-active { background: #ff4b4b !important; animation: pulse 1.5s infinite; border-color: #ff4b4b; }
 
-.social { margin-top: 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+.social { margin-top: 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; transform: translateZ(20px); }
 .social a { text-decoration: none; color: #fff !important; background: rgba(255, 255, 255, 0.1); border-radius: 18px; padding: 12px 14px; border: 1px solid rgba(255, 255, 255, .2); display: flex; align-items: center; gap: 10px; transition: .3s; font-weight: 600; }
 .dark-mode .social a { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, .1); }
 .social a:hover { transform: translateY(-3px); background: rgba(255, 255, 255, 0.25); }
@@ -218,7 +238,7 @@ body::after {
 .rd i { color: #FF4500 } .dc i { color: #5865F2 } .tw i { color: #6441A4 } .ve i { color: #1AB7EA }
 .li i { color: #00B900 } .we i { color: #07C160 } .vi i { color: #7360f2 } .sk i { color: #00AFF0 }
 
-.section { margin-top: 26px; background: rgba(255, 255, 255, 0.08); border-radius: 22px; border: 1px solid rgba(255, 255, 255, .2); padding: 18px 20px; transition: all 0.3s ease; }
+.section { margin-top: 26px; background: rgba(255, 255, 255, 0.08); border-radius: 22px; border: 1px solid rgba(255, 255, 255, .2); padding: 18px 20px; transition: all 0.3s ease; transform: translateZ(10px); }
 .dark-mode .section { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, .1); }
 .section strong { font-size: 16px; color: #fff !important; display: block; margin-bottom: 10px; }
 .section p { opacity: .9; margin-top: 6px; color: #fff !important; line-height: 1.6; }
@@ -230,9 +250,8 @@ body::after {
   margin-top: 6px; 
   font-weight: 600; 
   color: #fff !important; 
-  word-break: break-all; /* এই লাইনটি ইমেইলকে বক্সের ভেতরে রাখবে */
+  word-break: break-all;
 }
-
 
 .skill { margin: 15px 0; }
 .skill-name { display: flex; justify-content: space-between; margin-bottom: 5px; font-weight: 600; }
@@ -241,6 +260,11 @@ body::after {
 
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-top: 15px; }
 .skill-item { background: rgba(255, 255, 255, 0.1); padding: 10px 12px; border-radius: 10px; text-align: center; font-weight: 600; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, .2); }
+
+/* 3D Skill Sphere Container */
+.sphere-box { display: flex; justify-content: center; align-items: center; margin-top: 20px; font-weight: bold; color: #00f2fe; }
+.tagcloud { transform: translateZ(20px); }
+.tagcloud--item:hover { color: #ff8a4b; }
 
 form { margin-top: 12px; display: grid; gap: 12px; }
 .glass-input { padding: 14px 16px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); color: #fff !important; font-size: 16px; transition: all 0.3s ease; user-select: text; -webkit-user-select: text; outline: none; }
@@ -251,13 +275,32 @@ form { margin-top: 12px; display: grid; gap: 12px; }
 .glass-btn { padding: 14px; border-radius: 16px; border: 0; font-weight: 700; cursor: pointer; background: linear-gradient(135deg, #665bff, #ff7b32); color: #fff !important; transition: .3s; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; }
 .glass-btn:hover { box-shadow: 0 0 20px #ff7b32, 0 0 30px #665bff; transform: translateY(-3px); }
 
-footer { text-align: center; margin-top: 22px; opacity: .8; font-size: 13px; color: #fff !important; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, .2); }
+footer { text-align: center; margin-top: 22px; opacity: .8; font-size: 13px; color: #fff !important; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, .2); transform: translateZ(10px); }
 
 .reveal { opacity: 0; transform: translateY(32px) scale(.97); transition: .7s cubic-bezier(.16, .84, .44, 1); }
 .reveal.visible { opacity: 1; transform: none; }
 
 .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: #6b4bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 10000; border: none; color: white; font-size: 20px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
 .back-to-top.visible { opacity: 1; visibility: visible; }
+
+/* AI Chat Assistant Styles */
+.ai-bot-btn { position: fixed; bottom: 90px; right: 30px; width: 55px; height: 55px; background: linear-gradient(135deg, #00f2fe, #4facfe); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10000; border: none; color: white; font-size: 24px; box-shadow: 0 5px 15px rgba(0, 242, 254, 0.4); transition: transform 0.3s ease; }
+.ai-bot-btn:hover { transform: scale(1.1); }
+.ai-chat-box { position: fixed; bottom: 160px; right: 30px; width: 300px; height: 350px; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; display: none; flex-direction: column; z-index: 10000; box-shadow: 0 10px 30px rgba(0,0,0,0.5); overflow: hidden; }
+.ai-chat-box.open { display: flex; animation: slideUp 0.3s ease; }
+.ai-header { background: #6b4bff; padding: 15px; font-weight: bold; text-align: center; font-size: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.ai-body { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
+.ai-msg { background: rgba(255,255,255,0.1); padding: 10px; border-radius: 10px 10px 10px 0; align-self: flex-start; max-width: 80%; }
+.user-msg { background: #ff8a4b; padding: 10px; border-radius: 10px 10px 0 10px; align-self: flex-end; max-width: 80%; }
+.ai-input-area { display: flex; border-top: 1px solid rgba(255,255,255,0.1); }
+.ai-input { flex: 1; background: transparent; border: none; padding: 12px; color: white; outline: none; }
+.ai-send { background: transparent; border: none; color: #00f2fe; padding: 0 15px; cursor: pointer; font-size: 18px; }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Hidden Game Overlay */
+.game-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 100000; display: none; flex-direction: column; align-items: center; justify-content: center; backdrop-filter: blur(10px); }
+.game-overlay h2 { color: #0f0; font-family: monospace; margin-bottom: 20px; text-shadow: 0 0 10px #0f0; }
+.close-game { position: absolute; top: 30px; right: 40px; font-size: 30px; color: #ff4b4b; cursor: pointer; background: none; border: none; }
 
 .copy-warning { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0, 0, 0, 0.9); color: white; padding: 20px 30px; border-radius: 15px; border: 2px solid #ff4b4b; z-index: 9999; display: none; text-align: center; font-weight: bold; backdrop-filter: blur(10px); }
 .recording-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient(45deg, rgba(255,0,0,0.05), rgba(255,0,0,0.05) 10px, rgba(0,0,0,0.05) 10px, rgba(0,0,0,0.05) 20px); z-index: 9997; display: none; pointer-events: none; }
@@ -266,6 +309,8 @@ footer { text-align: center; margin-top: 22px; opacity: .8; font-size: 13px; col
   .container { margin: 30px auto; width: 96%; }
   .social { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
   .hire-me-btn { margin-top: 15px; width: 100%; }
+  /* Disable Parallax on mobile for better performance */
+  .card { transform: none !important; }
 }
 
 .noscript-alert { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #000; color: #fff; z-index: 999999; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; text-align: center; padding: 20px; }
@@ -291,160 +336,313 @@ footer { text-align: center; margin-top: 22px; opacity: .8; font-size: 13px; col
 
 <canvas id="particles-js"></canvas>
 
-<div class="container">
-  <div class="card reveal">
-    
-    <div class="top-controls">
-      <button class="icon-btn" id="voiceToggle" title="Voice Commands (Say 'Dark Mode' or 'Scroll Down')">
-        <i class="fas fa-microphone"></i>
-      </button>
-      <button class="icon-btn" id="themeToggle" title="Toggle Theme">
-        <i class="fas fa-moon"></i>
-      </button>
-    </div>
-    
-    <div class="header">
-      <div class="image-protection">
-        <img src="https://i.ibb.co.com/Rkd9H4w1/IMG-8125.jpg.jpeg" alt="Profile" />
-        <div class="status-badge" title="Online"></div>
+<div class="parallax-wrapper">
+  <div class="container" id="parallaxContainer">
+    <div class="card reveal" id="parallaxCard">
+      
+      <div class="top-controls">
+        <button class="icon-btn" id="voiceToggle" title="Voice Commands (Say 'Dark Mode' or 'Scroll Down')">
+          <i class="fas fa-microphone"></i>
+        </button>
+        <button class="icon-btn" id="themeToggle" title="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
       </div>
       
-      <div>
-        <div id="dynamicGreeting" style="font-size: 13px; font-weight: bold; color: #00f2fe; margin-bottom: 4px; letter-spacing: 1px; text-transform: uppercase;"></div>
+      <div class="header">
+        <div class="image-protection">
+          <img src="https://i.ibb.co.com/Rkd9H4w1/IMG-8125.jpg.jpeg" alt="Profile" />
+          <div class="status-badge" title="Online"></div>
+        </div>
         
-        <div class="name-badge">
-          <div class="name" id="easterEggTrigger" title="Click me 5 times!">Wasim Mahmood</div>
-          <div class="badge">✔</div>
+        <div>
+          <div id="dynamicGreeting" style="font-size: 13px; font-weight: bold; color: #00f2fe; margin-bottom: 4px; letter-spacing: 1px; text-transform: uppercase;"></div>
+          
+          <div class="name-badge">
+            <div class="name" id="easterEggTrigger" title="Click me 5 times!">Wasim Mahmood</div>
+            <div class="badge">✔</div>
+          </div>
+          <div class="tagline">Creative Developer & Tech Enthusiast</div>
+          <div class="location-line">
+            <i class="fa-solid fa-location-dot"></i>
+            Dhaka, Kishoreganj, Bhairab Bazar
+          </div>
+          <div class="visitor-counter">
+            <i class="fas fa-chart-line"></i> Visitors: <span id="visitCount">Loading...</span>
+          </div>
         </div>
-        <div class="tagline">Creative Developer & Tech Enthusiast</div>
-        <div class="location-line">
-          <i class="fa-solid fa-location-dot"></i>
-          Dhaka, Kishoreganj, Bhairab Bazar
-        </div>
-        <div class="visitor-counter">
-          <i class="fas fa-chart-line"></i> Visitors: <span id="visitCount">Loading...</span>
-        </div>
-      </div>
-      
-      <button id="hireMeBtn" class="hire-me-btn">
-        <i class="fas fa-rocket"></i> Hire Me
-      </button>
-    </div>
-
-    <div class="social reveal">
-      <a class="fb" href="https://www.facebook.com/share/1DMBocK6Ff/" target="_blank"><i class="fa-brands fa-facebook"></i>Facebook</a>
-      <a class="ig" href="https://www.instagram.com/zaynmahin_?igsh=MW56OHVsNmo5anlxag==" target="_blank"><i class="fa-brands fa-instagram"></i>Instagram</a>
-      <a class="tt" href="https://www.tiktok.com/@zaynmahin__?_r=1&_t=ZS-92akIXzWl8s" target="_blank"><i class="fa-brands fa-tiktok"></i>TikTok</a>
-      <a class="tg" href="https://t.me/+8801772447277" target="_blank"><i class="fa-brands fa-telegram"></i>Telegram</a>
-      <a class="wa" href="https://wa.me/+8801772447277" target="_blank"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
-      <a class="tw" href="https://x.com/zaynmahin?fbclid=..." target="_blank"><i class="fa-brands fa-x-twitter"></i>X (Twitter)</a>
-      <a class="th" href="https://www.threads.com/@zaynmahin_" target="_blank"><i class="fa-brands fa-threads"></i>Threads</a>
-      <a class="pi" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-pinterest"></i>Pinterest</a>
-      <a class="gi" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
-      <a class="sc" href="YOUR_LINK" target="_blank"><i class="fa-brands fa fa-snapchat"></i>Snapchat</a>
-      <a class="lk" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
-      <a class="yt" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-youtube"></i>YouTube</a>
-      <a class="rd" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-reddit"></i>Reddit</a>
-      <a class="dc" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-discord"></i>Discord</a>
-      <a class="tw" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-twitch"></i>Twitch</a>
-      <a class="ve" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-vimeo"></i>Vimeo</a>
-      <a class="li" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-line"></i>Line</a>
-      <a class="we" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-weixin"></i>WeChat</a>
-      <a class="vi" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-viber"></i>Viber</a>
-      <a class="sk" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-skype"></i>Skype</a>
-    </div>
-
-    <div class="section reveal">
-      <strong>Contact</strong>
-      <div class="info-line"><i class="fa-solid fa-phone"></i><a id="safePhone" href="#" style="color:inherit;text-decoration:none">Loading...</a></div>
-      <div class="info-line"><i class="fa-solid fa-envelope"></i><span id="safeEmail">Loading...</span></div>
-    </div>
-
-    <div class="section reveal">
-      <strong>Technical Skills</strong>
-      <div class="skill">
-        <div class="skill-name"><span>Web Development</span><span>90%</span></div>
-        <div class="progress-bar"><div style="width: 90%"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name"><span>UI/UX Design</span><span>75%</span></div>
-        <div class="progress-bar"><div style="width: 75%"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name"><span>Communication</span><span>95%</span></div>
-        <div class="progress-bar"><div style="width: 95%"></div></div>
-      </div>
-    </div>
-
-    <div class="section reveal">
-      <strong>What I'm Good At</strong>
-      <div class="skills-grid">
-        <div class="skill-item">Communication</div>
-        <div class="skill-item">Social Networking</div>
-        <div class="skill-item">Fast Learning</div>
-        <div class="skill-item">Creative Thinking</div>
-        <div class="skill-item">Problem Solving</div>
-        <div class="skill-item">Team Leadership</div>
-      </div>
-    </div>
-
-    <div class="section reveal">
-      <strong>About Me</strong>
-      <p>A creative mind always eager to learn something new. I find joy in small moments and constantly strive to improve my skills and reach my goals. Passionate about technology, new experiences, and embracing challenges.</p>
-    </div>
-
-    <div class="section reveal">
-      <strong>Hobbies / Interests</strong>
-      <p>
-        • 🎵 Listening to Music<br>
-        • 💻 Programming & Web/Game Development<br>
-        • 🚗 Driving<br>
-        • 🔧 Tech & Gadgets<br>
-        • 📚 Learning New Skills<br>
-        • 🖥️ Learning About Tech & Hardware<br>
-        • ⚽ Following Football Highlights & Analysis<br>
-        • 🍽️ Trying New Foods<br>
-        • 📱 Exploring New Apps & Tools<br>
-        • 🎬 Watching Movies & Series
-      </p>
-    </div>
-
-    <div class="section reveal" id="contactSection">
-      <div style="display:flex; justify-content:center; margin-bottom: 10px;">
-        <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_u25cckyh.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>
-      </div>
-      <strong style="text-align:center; font-size:20px;">Let's Work Together</strong>
-      <form id="contactForm">
-        <input class="glass-input" placeholder="Your Name" id="name" required>
-        <input class="glass-input" placeholder="Your Email" type="email" id="email" required>
         
-        <input type="text" id="honeypot" style="display:none;" tabindex="-1" autocomplete="off" placeholder="Leave this empty">
+        <button id="hireMeBtn" class="hire-me-btn">
+          <i class="fas fa-rocket"></i> Hire Me
+        </button>
+      </div>
 
-        <textarea class="glass-input" rows="4" placeholder="Type your message here..." id="message" required></textarea>
-        <button class="glass-btn" type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
-      </form>
-      <p style="text-align: center; margin-top: 10px; font-size: 14px;" id="formMessage"></p>
+      <div class="social reveal">
+        <a class="fb" href="https://www.facebook.com/share/1DMBocK6Ff/" target="_blank"><i class="fa-brands fa-facebook"></i>Facebook</a>
+        <a class="ig" href="https://www.instagram.com/zaynmahin_?igsh=MW56OHVsNmo5anlxag==" target="_blank"><i class="fa-brands fa-instagram"></i>Instagram</a>
+        <a class="tt" href="https://www.tiktok.com/@zaynmahin__?_r=1&_t=ZS-92akIXzWl8s" target="_blank"><i class="fa-brands fa-tiktok"></i>TikTok</a>
+        <a class="tg" href="https://t.me/+8801772447277" target="_blank"><i class="fa-brands fa-telegram"></i>Telegram</a>
+        <a class="wa" href="https://wa.me/+8801772447277" target="_blank"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
+        <a class="tw" href="https://x.com/zaynmahin?fbclid=..." target="_blank"><i class="fa-brands fa-x-twitter"></i>X (Twitter)</a>
+        <a class="th" href="https://www.threads.com/@zaynmahin_" target="_blank"><i class="fa-brands fa-threads"></i>Threads</a>
+        <a class="pi" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-pinterest"></i>Pinterest</a>
+        <a class="gi" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
+        <a class="sc" href="YOUR_LINK" target="_blank"><i class="fa-brands fa fa-snapchat"></i>Snapchat</a>
+        <a class="lk" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+        <a class="yt" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-youtube"></i>YouTube</a>
+        <a class="rd" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-reddit"></i>Reddit</a>
+        <a class="dc" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-discord"></i>Discord</a>
+        <a class="tw" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-twitch"></i>Twitch</a>
+        <a class="ve" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-vimeo"></i>Vimeo</a>
+        <a class="li" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-line"></i>Line</a>
+        <a class="we" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-weixin"></i>WeChat</a>
+        <a class="vi" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-viber"></i>Viber</a>
+        <a class="sk" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-skype"></i>Skype</a>
+      </div>
+
+      <div class="section reveal">
+        <strong>Contact</strong>
+        <div class="info-line"><i class="fa-solid fa-phone"></i><a id="safePhone" href="#" style="color:inherit;text-decoration:none">Loading...</a></div>
+        <div class="info-line"><i class="fa-solid fa-envelope"></i><span id="safeEmail">Loading...</span></div>
+      </div>
+
+      <div class="section reveal">
+        <strong>Technical Skills</strong>
+        <div class="skill">
+          <div class="skill-name"><span>Web Development</span><span>90%</span></div>
+          <div class="progress-bar"><div style="width: 90%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-name"><span>UI/UX Design</span><span>75%</span></div>
+          <div class="progress-bar"><div style="width: 75%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-name"><span>Communication</span><span>95%</span></div>
+          <div class="progress-bar"><div style="width: 95%"></div></div>
+        </div>
+      </div>
+
+      <div class="section reveal">
+        <strong style="text-align:center;">Interactive Tech Stack 🌐</strong>
+        <div class="sphere-box" id="sphereBox"></div>
+      </div>
+
+      <div class="section reveal">
+        <strong>What I'm Good At</strong>
+        <div class="skills-grid">
+          <div class="skill-item">Communication</div>
+          <div class="skill-item">Social Networking</div>
+          <div class="skill-item">Fast Learning</div>
+          <div class="skill-item">Creative Thinking</div>
+          <div class="skill-item">Problem Solving</div>
+          <div class="skill-item">Team Leadership</div>
+        </div>
+      </div>
+
+      <div class="section reveal">
+        <strong>About Me</strong>
+        <p>A creative mind always eager to learn something new. I find joy in small moments and constantly strive to improve my skills and reach my goals. Passionate about technology, new experiences, and embracing challenges.</p>
+      </div>
+
+      <div class="section reveal">
+        <strong>Hobbies / Interests</strong>
+        <p>
+          • 🎵 Listening to Music<br>
+          • 💻 Programming & Web/Game Development<br>
+          • 🚗 Driving<br>
+          • 🔧 Tech & Gadgets<br>
+          • 📚 Learning New Skills<br>
+          • 🖥️ Learning About Tech & Hardware<br>
+          • ⚽ Following Football Highlights & Analysis<br>
+          • 🍽️ Trying New Foods<br>
+          • 📱 Exploring New Apps & Tools<br>
+          • 🎬 Watching Movies & Series
+        </p>
+      </div>
+
+      <div class="section reveal" id="contactSection">
+        <div style="display:flex; justify-content:center; margin-bottom: 10px;">
+          <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_u25cckyh.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>
+        </div>
+        <strong style="text-align:center; font-size:20px;">Let's Work Together</strong>
+        <form id="contactForm">
+          <input class="glass-input" placeholder="Your Name" id="name" required>
+          <input class="glass-input" placeholder="Your Email" type="email" id="email" required>
+          
+          <input type="text" id="honeypot" style="display:none;" tabindex="-1" autocomplete="off" placeholder="Leave this empty">
+
+          <textarea class="glass-input" rows="4" placeholder="Type your message here..." id="message" required></textarea>
+          <button class="glass-btn" type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+        </form>
+        <p style="text-align: center; margin-top: 10px; font-size: 14px;" id="formMessage"></p>
+      </div>
+
+      <footer class="reveal">
+        ©️ <span id="year"></span> Wasim Mahmood Mia — All Rights Reserved
+      </footer>
     </div>
-
-    <footer class="reveal">
-      ©️ <span id="year"></span> Wasim Mahmood Mia — All Rights Reserved
-    </footer>
   </div>
 </div>
 
 <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
+<button class="ai-bot-btn" id="aiBotBtn" title="Chat with AI Assistant"><i class="fas fa-robot"></i></button>
+<div class="ai-chat-box" id="aiChatBox">
+  <div class="ai-header">Wasim's AI Assistant 🤖</div>
+  <div class="ai-body" id="aiBody">
+    <div class="ai-msg">Hello! I'm an AI assistant. How can I help you learn more about Wasim?</div>
+  </div>
+  <div class="ai-input-area">
+    <input type="text" class="ai-input" id="aiInput" placeholder="Type a message...">
+    <button class="ai-send" id="aiSend"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
+
+<div class="game-overlay" id="gameOverlay">
+  <button class="close-game" id="closeGame">&times;</button>
+  <h2>🕹️ SECRET TERMINAL UNLOCKED 🕹️</h2>
+  <p style="color: #fff; margin-bottom: 20px;">You entered the Konami Code!</p>
+  <div style="background: #000; padding: 20px; border: 2px solid #0f0; border-radius: 10px; color: #0f0;">
+    <p>> HACKING MAINFRAME...</p>
+    <p>> ACCESS GRANTED.</p>
+    <p>> CONGRATULATIONS! YOU FOUND THE HIDDEN EASTER EGG.</p>
+    <br>
+    <p style="text-align: center; animation: pulse 1s infinite;">System Overridden. Enjoy the Matrix.</p>
+  </div>
+</div>
+
 <script>
+// =================== SOUND EFFECTS (UI Audio) ===================
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+function playClickSound() {
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  const osc = audioCtx.createOscillator();
+  const gainNode = audioCtx.createGain();
+  
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(800, audioCtx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(300, audioCtx.currentTime + 0.1);
+  
+  // Adding volume control so it sounds nice
+  gainNode.gain.setValueAtTime(0.2, audioCtx.currentTime);
+  gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.1);
+  
+  osc.connect(gainNode);
+  gainNode.connect(audioCtx.destination);
+  
+  osc.start();
+  osc.stop(audioCtx.currentTime + 0.1);
+}
+
+document.querySelectorAll('a, button').forEach(btn => {
+  btn.addEventListener('click', () => { playClickSound(); });
+});
+
+// =================== PARALLAX SCROLLING EFFECT ===================
+const parallaxCard = document.getElementById('parallaxCard');
+if(window.innerWidth > 768) {
+  document.addEventListener('mousemove', (e) => {
+    let xAxis = (window.innerWidth / 2 - e.pageX) / 40;
+    let yAxis = (window.innerHeight / 2 - e.pageY) / 40;
+    parallaxCard.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+  });
+  // Reset when mouse leaves window
+  document.addEventListener('mouseleave', () => {
+    parallaxCard.style.transform = `rotateY(0deg) rotateX(0deg)`;
+  });
+}
+
+// =================== 3D SKILL SPHERE (TagCloud) ===================
+const mySkills = [
+  'HTML5', 'CSS3', 'JavaScript', 'React', 'Node.js', 
+  'UI/UX', 'Figma', 'Python', 'Git', 'C++', 
+  'Web Dev', 'SEO', 'Leadership'
+];
+var tagCloud = TagCloud('.sphere-box', mySkills, {
+  radius: window.innerWidth > 768 ? 130 : 100,
+  maxSpeed: 'fast',
+  initSpeed: 'normal',
+  direction: 135,
+  keep: true
+});
+
+// =================== AI CHAT ASSISTANT ===================
+const aiBotBtn = document.getElementById('aiBotBtn');
+const aiChatBox = document.getElementById('aiChatBox');
+const aiSend = document.getElementById('aiSend');
+const aiInput = document.getElementById('aiInput');
+const aiBody = document.getElementById('aiBody');
+
+aiBotBtn.addEventListener('click', () => {
+  aiChatBox.classList.toggle('open');
+});
+
+function addAiMessage(text, isUser = false) {
+  const div = document.createElement('div');
+  div.className = isUser ? 'user-msg' : 'ai-msg';
+  div.innerText = text;
+  aiBody.appendChild(div);
+  aiBody.scrollTop = aiBody.scrollHeight;
+}
+
+function processAiLogic(msg) {
+  const text = msg.toLowerCase();
+  let reply = "I'm still learning! But Wasim is a great developer. You can contact him via the form above.";
+  if(text.includes('skills') || text.includes('know')) reply = "Wasim specializes in Web Development, UI/UX, and fast problem solving!";
+  if(text.includes('hire') || text.includes('contact')) reply = "Scroll down to the 'Contact' section to send him an email directly, or use his social links!";
+  if(text.includes('location') || text.includes('where')) reply = "He is based in Dhaka, Kishoreganj, Bhairab Bazar, Bangladesh.";
+  if(text.includes('hello') || text.includes('hi')) reply = "Hello! Ask me about Wasim's skills or how to contact him.";
+  
+  setTimeout(() => { addAiMessage(reply); }, 800);
+}
+
+aiSend.addEventListener('click', () => {
+  const val = aiInput.value.trim();
+  if(val) {
+    addAiMessage(val, true);
+    aiInput.value = '';
+    processAiLogic(val);
+  }
+});
+aiInput.addEventListener('keypress', (e) => {
+  if(e.key === 'Enter') aiSend.click();
+});
+
+// =================== GAMIFICATION (Konami Code) ===================
+const konamiCode = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+let konamiIndex = 0;
+document.addEventListener('keydown', (e) => {
+  if (e.key === konamiCode[konamiIndex]) {
+    konamiIndex++;
+    if (konamiIndex === konamiCode.length) {
+      document.getElementById('gameOverlay').style.display = 'flex';
+      document.body.style.background = "#000";
+      document.querySelectorAll('.card, .section').forEach(el => el.style.borderColor = "#0f0");
+      konamiIndex = 0; // reset
+    }
+  } else {
+    konamiIndex = 0;
+  }
+});
+document.getElementById('closeGame').addEventListener('click', () => {
+  document.getElementById('gameOverlay').style.display = 'none';
+});
+
+// ====================================================================
+// =================== ORIGINAL SCRIPT CONTINUES ======================
+// ====================================================================
+
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// =================== DYNAMIC GREETING ===================
+// DYNAMIC GREETING
 const hr = new Date().getHours();
 let greeting = "Good Evening 🌙";
 if (hr < 12) greeting = "Good Morning ☀️";
 else if (hr < 18) greeting = "Good Afternoon 🌤️";
 document.getElementById('dynamicGreeting').innerText = greeting;
 
-// =================== ANTI-SCRAPING (HIDDEN CONTACT INFO) ===================
+// ANTI-SCRAPING (HIDDEN CONTACT INFO)
 const pD = atob('MDE2MjA0MzQ3OTQ=');
 const eD = atob('d2FzaW1tYWhtb29kbWlhQGhvdG1haWwuY29t');
 const safePhoneEl = document.getElementById('safePhone');
@@ -452,7 +650,7 @@ safePhoneEl.innerText = pD;
 safePhoneEl.href = 'tel:' + pD;
 document.getElementById('safeEmail').innerText = eD;
 
-// =================== EASTER EGG (MINI GAME / MATRIX EFFECT) ===================
+// EASTER EGG (MINI GAME / MATRIX EFFECT)
 let easterEggCount = 0;
 document.getElementById('easterEggTrigger').addEventListener('click', function() {
   easterEggCount++;
@@ -472,7 +670,7 @@ document.getElementById('easterEggTrigger').addEventListener('click', function()
   }
 });
 
-// =================== SCROLL PROGRESS & COUNTER ===================
+// SCROLL PROGRESS & COUNTER
 window.onscroll = function() {
   let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -489,13 +687,13 @@ fetch('https://api.counterapi.dev/v1/wasim_portfolio/visits/up')
   .then(data => { document.getElementById('visitCount').innerText = data.count; })
   .catch(err => { document.getElementById('visitCount').innerText = "1,204+"; });
 
-// =================== HIRE ME CONFETTI ===================
+// HIRE ME CONFETTI
 document.getElementById('hireMeBtn').addEventListener('click', function() {
   confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#00f2fe', '#4facfe', '#6b4bff', '#ff8a4b'] });
   document.getElementById('contactSection').scrollIntoView({ behavior: 'smooth' });
 });
 
-// =================== SMART VOICE COMMANDS ===================
+// SMART VOICE COMMANDS
 const voiceBtn = document.getElementById('voiceToggle');
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -515,7 +713,7 @@ if(SpeechRecognition) {
   recognition.onerror = () => { voiceBtn.classList.remove('voice-active'); alert("Voice recognition failed. Try again!"); };
 } else { voiceBtn.style.display = 'none'; }
 
-// =================== TIME-BASED THEME TOGGLE ===================
+// TIME-BASED THEME TOGGLE
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon = themeToggle.querySelector('i');
 function applyAutoTheme() {
@@ -533,7 +731,7 @@ themeToggle.addEventListener('click', () => {
   else { themeIcon.className = 'fas fa-moon'; localStorage.setItem('theme', 'light'); }
 });
 
-// =================== ANIMATIONS & FORM ===================
+// ANIMATIONS & FORM
 const reveals = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver(e => {
   e.forEach(x => { 
@@ -602,7 +800,7 @@ function animateParticles() {
 animateParticles();
 window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
 
-// =================== SECURITY SCRIPTS ===================
+// SECURITY SCRIPTS
 !function(){const e=document;function t(){const e=document.getElementById("copyWarning");e.style.display="block",setTimeout((()=>{e.style.display="none"}),2e3)}function o(){const e=document.getElementById("recordingOverlay");e.style.display="block",setTimeout((()=>{e.style.display="none"}),3e3)}e.addEventListener("selectstart",(e=>{"INPUT"!==e.target.tagName&&"TEXTAREA"!==e.target.tagName&&(e.preventDefault(),t())})),e.addEventListener("copy",(e=>{e.preventDefault(),t()})),e.addEventListener("cut",(e=>{e.preventDefault(),t()})),e.addEventListener("contextmenu",(e=>{"INPUT"!==e.target.tagName&&"TEXTAREA"!==e.target.tagName&&(e.preventDefault(),t())})),e.addEventListener("dragstart",(e=>{"IMG"!==e.target.tagName&&"A"!==e.target.tagName||e.preventDefault()})),e.addEventListener("keydown",(e=>{e.ctrlKey&&["c","v","x","a","s","p"].includes(e.key.toLowerCase())&&"INPUT"!==e.target.tagName&&"TEXTAREA"!==e.target.tagName&&(e.preventDefault(),t()),"PrintScreen"===e.key&&(e.preventDefault(),t(),o()),"F12"===e.key&&(e.preventDefault(),t())})),setInterval((()=>{window.mediaDevices&&navigator.mediaDevices.getDisplayMedia&&o()}),5e3),window.addEventListener("blur",(()=>{e.body.style.filter="blur(3px)",e.body.style.transition="filter 0.3s ease"})),window.addEventListener("focus",(()=>{e.body.style.filter="none"})),console.log("%cStop!","color: red; font-size: 50px; font-weight: bold; text-shadow: 2px 2px 0 #000;"),console.log("%cThis is a browser feature intended for developers.","font-size: 16px; color: #fff; background: #000; padding: 10px; border-radius: 5px;")}();
 </script>
 </body>
