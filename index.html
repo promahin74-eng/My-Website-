@@ -539,20 +539,6 @@ document.querySelectorAll('a, button').forEach(btn => {
   btn.addEventListener('click', () => { playClickSound(); });
 });
 
-// =================== PARALLAX SCROLLING EFFECT ===================
-const parallaxCard = document.getElementById('parallaxCard');
-if(window.innerWidth > 768) {
-  document.addEventListener('mousemove', (e) => {
-    let xAxis = (window.innerWidth / 2 - e.pageX) / 40;
-    let yAxis = (window.innerHeight / 2 - e.pageY) / 40;
-    parallaxCard.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-  });
-  // Reset when mouse leaves window
-  document.addEventListener('mouseleave', () => {
-    parallaxCard.style.transform = `rotateY(0deg) rotateX(0deg)`;
-  });
-}
-
 // =================== 3D SKILL SPHERE (TagCloud) ===================
 const mySkills = [
   'HTML5', 'CSS3', 'JavaScript', 'React', 'Node.js', 
