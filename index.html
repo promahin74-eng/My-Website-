@@ -27,6 +27,7 @@
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <style>
 * {
@@ -266,8 +267,8 @@ body::after {
 .tagcloud { transform: translateZ(20px); }
 .tagcloud--item:hover { color: #ff8a4b; }
 
-form { margin-top: 12px; display: grid; gap: 12px; }
-.glass-input { padding: 14px 16px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); color: #fff !important; font-size: 16px; transition: all 0.3s ease; user-select: text; -webkit-user-select: text; outline: none; }
+form { margin-top: 12px; display: flex; flex-direction: column; gap: 15px; width: 100%; }
+.glass-input { width: 100%; box-sizing: border-box; padding: 14px 16px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); color: #fff !important; font-size: 16px; transition: all 0.3s ease; user-select: text; -webkit-user-select: text; outline: none; }
 .glass-input::placeholder { color: rgba(255, 255, 255, 0.6); }
 .glass-input:focus { background: rgba(255, 255, 255, 0.1); border-color: #00f2fe; box-shadow: 0 0 15px rgba(0, 242, 254, 0.3); transform: translateY(-2px); }
 .dark-mode .glass-input { background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.15); }
@@ -466,12 +467,12 @@ footer { text-align: center; margin-top: 22px; opacity: .8; font-size: 13px; col
         </div>
         <strong style="text-align:center; font-size:20px;">Let's Work Together</strong>
         <form id="contactForm">
-          <input class="glass-input" placeholder="Your Name" id="name" required>
-          <input class="glass-input" placeholder="Your Email" type="email" id="email" required>
+          <input class="glass-input" name="user_name" placeholder="Your Name" id="name" required>
+          <input class="glass-input" name="user_email" placeholder="Your Email" type="email" id="email" required>
           
           <input type="text" id="honeypot" style="display:none;" tabindex="-1" autocomplete="off" placeholder="Leave this empty">
 
-          <textarea class="glass-input" rows="4" placeholder="Type your message here..." id="message" required></textarea>
+          <textarea class="glass-input" name="message" rows="4" placeholder="Type your message here..." id="message" required></textarea>
           <button class="glass-btn" type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
         </form>
         <p style="text-align: center; margin-top: 10px; font-size: 14px;" id="formMessage"></p>
@@ -512,6 +513,9 @@ footer { text-align: center; margin-top: 22px; opacity: .8; font-size: 13px; col
 </div>
 
 <script>
+// =================== EMAILJS INITIALIZATION ===================
+emailjs.init("esoedtqbzwOd78RIS");
+
 // =================== SOUND EFFECTS (UI Audio) ===================
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
@@ -738,13 +742,15 @@ reveals.forEach(r => io.observe(r));
 
 backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
+// =================== EMAILJS FORM SUBMISSION ===================
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
+
 contactForm.addEventListener('submit', function(e) {
   e.preventDefault();
   
   if(document.getElementById('honeypot').value !== "") {
-    formMessage.textContent = "🤖 Bot activity detected. Access denied.";
+    formMessage.innerHTML = '<i class="fas fa-robot fa-bounce"></i> Bot activity detected. Access denied.';
     formMessage.style.color = "#ff4b4b";
     return;
   }
@@ -752,18 +758,27 @@ contactForm.addEventListener('submit', function(e) {
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   const message = document.getElementById('message').value;
-  if(!name || !email || !message) { formMessage.textContent = "Please fill all fields!"; formMessage.style.color = "#ff8a4b"; return; }
+  if(!name || !email || !message) { 
+    formMessage.innerHTML = '<i class="fas fa-exclamation-circle fa-beat"></i> Please fill all fields!'; 
+    formMessage.style.color = "#ff8a4b"; 
+    return; 
+  }
   
-  formMessage.textContent = "📧 Opening email app..."; formMessage.style.color = "#1f9bff";
-  const subject = `Message from ${name} - Portfolio Website`;
-  const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nSent from your portfolio website.`;
-  const mailtoLink = `mailto:${eD}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  
-  setTimeout(() => {
-    window.location.href = mailtoLink;
-    formMessage.textContent = "✅ Email app opened! Please send the message."; formMessage.style.color = "#25D366";
-    setTimeout(() => { contactForm.reset(); formMessage.textContent = ""; }, 3000);
-  }, 500);
+  formMessage.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending message...'; 
+  formMessage.style.color = "#1f9bff";
+
+  // Use the specific EmailJS IDs
+  emailjs.sendForm('service_tj7usqd', 'template_165bf11', this)
+    .then(function() {
+      formMessage.innerHTML = '<i class="fas fa-check-circle fa-beat"></i> Message sent successfully!'; 
+      formMessage.style.color = "#25D366";
+      contactForm.reset();
+      setTimeout(() => { formMessage.innerHTML = ""; }, 4000);
+    }, function(error) {
+      formMessage.innerHTML = '<i class="fas fa-times-circle fa-shake"></i> Failed to send message. Please try again.'; 
+      formMessage.style.color = "#ff4b4b";
+      console.log('FAILED...', error);
+    });
 });
 
 const canvas = document.getElementById('particles-js');
