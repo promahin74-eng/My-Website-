@@ -1,1538 +1,444 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-
-<meta name="description" content="Portfolio of Wasim Mahmood Mia - Creative Developer & Tech Enthusiast">
-<meta name="keywords" content="Wasim Mahmood, Developer, UI/UX, Portfolio, Bangladesh">
-<meta property="og:title" content="Wasim Mahmood Mia — Profile">
-<meta property="og:description" content="A creative mind always eager to learn something new. Explore my portfolio!">
-<meta property="og:image" content="https://i.ibb.co.com/Rkd9H4w1/IMG-8125.jpg.jpeg">
-<meta property="og:type" content="website">
-
-<title>Wasim Mahmood Mia — Profile</title>
-
-<style id="antiClickjack">body { display: none !important; }</style>
-<script>
-  try {
-    if (self === top) {
-      var antiClickjack = document.getElementById("antiClickjack");
-      antiClickjack.parentNode.removeChild(antiClickjack);
-    } else {
-      try { top.location = self.location; } catch(e) {
-        var antiClickjack = document.getElementById("antiClickjack");
-        antiClickjack.parentNode.removeChild(antiClickjack);
-      }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Windows 10 ও Browser keyboard shortcuts শেখার জন্য premium light theme shortcut guide." />
+  <meta name="keywords" content="Windows shortcuts, browser shortcuts, Bengali shortcuts, keyboard shortcuts" />
+  <meta property="og:title" content="Windows 10 + Browser Keyboard Shortcuts" />
+  <meta property="og:description" content="Premium Bengali Windows shortcut website with search, filters, icons and copy-ready shortcuts." />
+  <meta property="og:type" content="website" />
+  <title>Windows 10 + Browser Keyboard Shortcuts</title>
+  <style>
+    :root {
+      --bg: #f7fbff;
+      --bg-strong: #eef7ff;
+      --card: rgba(255, 255, 255, 0.86);
+      --card-solid: #ffffff;
+      --text: #102033;
+      --muted: #63738a;
+      --line: rgba(33, 98, 168, 0.16);
+      --primary: #0078d4;
+      --primary-2: #38bdf8;
+      --primary-3: #7c3aed;
+      --gold: #f6b73c;
+      --green: #12b981;
+      --shadow: 0 24px 70px rgba(15, 58, 112, 0.16);
+      --shadow-soft: 0 12px 34px rgba(15, 58, 112, 0.11);
+      --radius: 28px;
     }
-  } catch(e) {
-    var antiClickjack = document.getElementById("antiClickjack");
-    if (antiClickjack) antiClickjack.parentNode.removeChild(antiClickjack);
-  }
-</script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, Inter, sans-serif;
-}
-
-/* ইউআই/ইউএক্স: কাস্টম স্ক্রলবার */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); }
-::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #6b4bff, #00f2fe); border-radius: 10px; }
-
-html, body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  touch-action: pan-y;
-}
-
-body {
-  min-height: 100vh;
-  width: 100%;
-  margin: 0;
-  color: #fff;
-  display: block;
-  background:
-    radial-gradient(circle at 18% 20%, rgba(0, 242, 254, 0.18), transparent 28%),
-    radial-gradient(circle at 82% 12%, rgba(107, 75, 255, 0.22), transparent 30%),
-    radial-gradient(circle at 50% 92%, rgba(31, 155, 255, 0.12), transparent 35%),
-    linear-gradient(145deg, #06111f 0%, #0a1230 48%, #020617 100%);
-  position: relative;
-  transition: background 0.5s ease;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-
-body.dark-mode {
-  background:
-    radial-gradient(circle at 20% 18%, rgba(0, 242, 254, 0.12), transparent 30%),
-    radial-gradient(circle at 80% 16%, rgba(107, 75, 255, 0.16), transparent 32%),
-    radial-gradient(circle at 50% 88%, rgba(31, 155, 255, 0.08), transparent 36%),
-    linear-gradient(145deg, #020617 0%, #07111f 52%, #01030a 100%);
-}
-
-/* Scroll Progress Bar */
-.scroll-progress-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: transparent;
-  z-index: 10001;
-}
-.scroll-progress-bar {
-  height: 100%;
-  background: linear-gradient(90deg, #00f2fe, #4facfe, #00f2fe);
-  width: 0%;
-  transition: width 0.1s;
-  box-shadow: 0 0 10px #00f2fe;
-}
-
-/* Anti-copy overlay */
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9998;
-  pointer-events: none;
-}
-
-/* Digital wave canvas */
-#digital-wave {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.82;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #digital-wave { display: none; }
-}
-
-@media (max-width: 768px) {
-  #digital-wave { opacity: 0.3; }
-}
-
-/* Parallax Wrapper */
-.parallax-wrapper {
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-}
-
-.container {
-  width: 100%;
-  max-width: 900px;
-  padding: 0 12px;
-  margin: 16px auto;
-  box-sizing: border-box;
-  z-index: 2;
-  position: relative;
-}
-
-.card {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, .2);
-  border-radius: 24px;
-  padding: clamp(16px, 4vw, 32px);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
-  z-index: 2;
-  position: relative;
-  transition: transform 0.1s ease-out, background 0.3s ease, border 0.3s ease;
-  transform: translateZ(0);
-  contain: layout;
-}
-
-.dark-mode .card {
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, .1);
-}
-
-.header {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  flex-wrap: wrap;
-  position: relative;
-}
-
-.image-protection {
-  position: relative;
-  display: inline-block;
-}
-
-.status-badge {
-  position: absolute;
-  bottom: 0;
-  right: 5px;
-  background: #23a559;
-  border: 3px solid #fff;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  z-index: 3;
-  box-shadow: 0 0 10px rgba(35, 165, 89, 0.6);
-  animation: pulse 2s infinite;
-}
-
-.dark-mode .status-badge { border-color: #1a1a2e; }
-
-@keyframes pulse {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(35, 165, 89, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(35, 165, 89, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(35, 165, 89, 0); }
-}
-
-/* Image styling */
-.header img {
-  width: 95px;
-  height: 95px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid rgba(255, 255, 255, .4);
-  pointer-events: none;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-}
-
-.image-protection::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: transparent;
-  z-index: 1;
-}
-
-.name-badge { display: inline-flex; align-items: center; gap: 6px; flex-wrap: nowrap; }
-.name { font-size: 26px; font-weight: 800; white-space: nowrap; cursor: pointer; }
-.badge { background: #1877f2; color: #fff; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px; }
-.tagline { opacity: .9; margin-top: 4px; }
-
-.visitor-counter { display: inline-flex; align-items: center; gap: 6px; background: rgba(255, 255, 255, 0.15); padding: 4px 10px; border-radius: 20px; font-size: 13px; margin-top: 8px; border: 1px solid rgba(255,255,255,0.2); }
-
-.hire-me-btn { margin-left: auto; padding: 10px 20px; border-radius: 20px; border: none; background: linear-gradient(135deg, #00f2fe, #4facfe); color: white; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4); transition: all 0.3s ease; z-index: 10; }
-.hire-me-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 6px 20px rgba(0, 242, 254, 0.6); }
-
-.top-controls { position: absolute !important; top: 14px !important; right: 14px !important; display: flex; gap: 10px; z-index: 100 !important; padding: 5px !important; background: rgba(4, 8, 20, 0.55) !important; border: 1px solid rgba(255,255,255,0.12) !important; backdrop-filter: blur(14px) !important; -webkit-backdrop-filter: blur(14px) !important; border-radius: 999px !important; box-shadow: 0 6px 20px rgba(0,0,0,0.28) !important; }
-.icon-btn { width: 36px !important; height: 36px !important; font-size: 15px !important; background: rgba(8, 14, 30, 0.65) !important; border: 1px solid rgba(255,255,255,0.18) !important; backdrop-filter: blur(12px) !important; -webkit-backdrop-filter: blur(12px) !important; box-shadow: 0 4px 16px rgba(0,0,0,0.32) !important; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; color: white; }
-.icon-btn:hover { background: rgba(255, 255, 255, 0.2); transform: rotate(15deg) scale(1.1); }
-
-.social { margin-top: 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
-.social a { text-decoration: none; color: #fff !important; background: rgba(255, 255, 255, 0.10); border-radius: 18px; padding: 12px 14px; border: 1px solid rgba(255, 255, 255, .22); display: flex; align-items: center; gap: 10px; transition: .3s; font-weight: 600; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
-.dark-mode .social a { background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, .1); }
-.social a:hover { transform: translateY(-3px); background: rgba(255, 255, 255, 0.20); box-shadow: 0 6px 16px rgba(0,0,0,0.22); }
-.dark-mode .social a:hover { background: rgba(255, 255, 255, 0.10); }
-
-.fb i { color: #1877f2 } .ig i { color: #E4405F } .tt i { color: #000 } .tg i { color: #2AABEE }
-.wa i { color: #25D366 } .tw i { color: #ffffff } .th i { color: #ff9500 } .pi i { color: #E60023 }
-.gi i { color: #000000 } .sc i { color: #FFFC00 } .lk i { color: #0077B5 } .yt i { color: #FF0000 }
-.rd i { color: #FF4500 } .dc i { color: #5865F2 } .tw i { color: #6441A4 } .ve i { color: #1AB7EA }
-.li i { color: #00B900 } .we i { color: #07C160 } .vi i { color: #7360f2 } .sk i { color: #00AFF0 }
-
-.section { margin-top: 26px; background: rgba(255, 255, 255, 0.08); border-radius: 22px; border: 1px solid rgba(255, 255, 255, .2); padding: 18px 20px; transition: all 0.3s ease; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
-.dark-mode .section { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, .1); }
-.section strong { font-size: 17px; letter-spacing: 0.3px; color: #fff !important; display: block; margin-bottom: 10px; }
-.section p { opacity: .9; margin-top: 6px; color: #fff !important; line-height: 1.6; }
-
-.info-line, .location-line { 
-  display: flex; 
-  align-items: center; 
-  gap: 10px; 
-  margin-top: 6px; 
-  font-weight: 600; 
-  color: #fff !important; 
-  word-break: break-all;
-}
-
-.skill { margin: 15px 0; }
-.skill-name { display: flex; justify-content: space-between; margin-bottom: 5px; font-weight: 600; }
-.progress-bar { height: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; overflow: hidden; }
-.progress-bar div { height: 100%; background: linear-gradient(90deg, #6b4bff, #ff8a4b); border-radius: 4px; width: 0; transition: width 1.5s ease-in-out; }
-
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-top: 15px; }
-.skill-item { background: rgba(255, 255, 255, 0.1); padding: 10px 12px; border-radius: 10px; text-align: center; font-weight: 600; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, .2); }
-
-/* Tech Stack Badge Grid */
-form { margin-top: 12px; display: flex; flex-direction: column; gap: 15px; width: 100%; }
-.glass-input { width: 100%; box-sizing: border-box; padding: 14px 16px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: #fff !important; font-size: 16px; transition: all 0.3s ease; user-select: text; -webkit-user-select: text; outline: none; }
-.glass-input::placeholder { color: rgba(255, 255, 255, 0.6); }
-.glass-input:focus { background: rgba(255, 255, 255, 0.1); border-color: #00f2fe; box-shadow: 0 0 15px rgba(0, 242, 254, 0.3); transform: translateY(-2px); }
-.dark-mode .glass-input { background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.15); }
-
-.glass-btn { padding: 14px; border-radius: 16px; border: 0; font-weight: 700; cursor: pointer; background: linear-gradient(135deg, #665bff, #ff7b32); color: #fff !important; transition: .3s; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; }
-.glass-btn:hover { box-shadow: 0 0 20px #ff7b32, 0 0 30px #665bff; transform: translateY(-3px); }
-
-footer { text-align: center; margin-top: 22px; opacity: .8; font-size: 13px; color: #fff !important; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, .2); }
-
-.reveal { opacity: 0; transform: translateY(24px) scale(0.98); transition: 0.55s cubic-bezier(0.16, 0.84, 0.44, 1); }
-.reveal.visible { opacity: 1; transform: translateY(0) scale(1); }
-
-.back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: #6b4bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 10000; border: none; color: white; font-size: 20px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
-.back-to-top.visible { opacity: 1; visibility: visible; }
-
-/* Hidden Game Overlay */
-.game-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 100000; display: none; flex-direction: column; align-items: center; justify-content: center; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-.game-overlay h2 { color: #0f0; font-family: monospace; margin-bottom: 20px; text-shadow: 0 0 10px #0f0; }
-.close-game { position: absolute; top: 30px; right: 40px; font-size: 30px; color: #ff4b4b; cursor: pointer; background: none; border: none; }
-
-.copy-warning { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0, 0, 0, 0.9); color: white; padding: 20px 30px; border-radius: 15px; border: 2px solid #ff4b4b; z-index: 9999; display: none; text-align: center; font-weight: bold; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-.recording-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient(45deg, rgba(255,0,0,0.05), rgba(255,0,0,0.05) 10px, rgba(0,0,0,0.05) 10px, rgba(0,0,0,0.05) 20px); z-index: 9997; display: none; pointer-events: none; }
-
-@media (max-width: 768px) {
-  body::before { animation: none !important; opacity: 0.4; }
-  .container { width: 100%; max-width: 900px; padding: 0 12px; margin: 16px auto; box-sizing: border-box; }
-  .social { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
-  .hire-me-btn { width: 100% !important; margin-top: 14px !important; }
-  .card { transform: translateZ(0) !important; }
-  #digital-wave { display: none; }
-}
-
-/* ===== NEW SECTION ENHANCEMENTS ===== */
-:root {
-  --accent-1: #7c3cff;
-  --accent-2: #00f2fe;
-  --accent-3: #ff8a4b;
-  --accent-4: #23a559;
-  --glass-bg: rgba(255,255,255,0.115);
-  --glass-border: rgba(255,255,255,0.24);
-  --text-muted: rgba(255,255,255,0.76);
-  --shadow-xl: 0 30px 90px rgba(0, 0, 0, 0.42);
-}
-
-html { scroll-behavior: smooth; }
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: -20%;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 16% 24%, rgba(0,242,254,0.20), transparent 24%),
-    radial-gradient(circle at 78% 14%, rgba(124,60,255,0.24), transparent 27%),
-    radial-gradient(circle at 80% 78%, rgba(255,138,75,0.13), transparent 25%),
-    linear-gradient(115deg, transparent 0 46%, rgba(255,255,255,0.045) 47% 49%, transparent 50% 100%);
-  animation: none;
-}
-
-.card {
-  width: 100% !important;
-  background:
-    linear-gradient(145deg, rgba(255,255,255,0.17), rgba(255,255,255,0.075)) !important;
-  border: 1px solid rgba(255,255,255,0.30) !important;
-  border-top-color: rgba(255,255,255,0.46) !important;
-  border-radius: 24px !important;
-  padding: clamp(16px, 4vw, 32px) !important;
-  box-shadow: var(--shadow-xl), inset 0 1px 0 rgba(255,255,255,0.20) !important;
-  overflow: visible;
-  box-sizing: border-box;
-  transform: translateZ(0);
-}
-
-.dark-mode .card {
-  background:
-    linear-gradient(145deg, rgba(10,18,38,0.92), rgba(2,6,23,0.76)) !important;
-  border: 1px solid rgba(148,163,184,0.22) !important;
-  border-top-color: rgba(0,242,254,0.28) !important;
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(255,255,255,0.09), transparent 18% 82%, rgba(255,255,255,0.06)),
-    radial-gradient(circle at top right, rgba(0,242,254,0.18), transparent 32%);
-  pointer-events: none;
-}
-
-.top-controls {
-  position: absolute !important;
-  top: 14px !important;
-  right: 14px !important;
-  z-index: 100 !important;
-  padding: 5px !important;
-  background: rgba(4, 8, 20, 0.55) !important;
-  border: 1px solid rgba(255,255,255,0.12) !important;
-  backdrop-filter: blur(14px) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
-  border-radius: 999px !important;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.28) !important;
-}
-
-.icon-btn {
-  width: 36px !important;
-  height: 36px !important;
-  font-size: 15px !important;
-  background: rgba(8, 14, 30, 0.65) !important;
-  border: 1px solid rgba(255,255,255,0.18) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.32) !important;
-}
-
-.header {
-  display: grid !important;
-  grid-template-columns: auto 1fr auto;
-  gap: 20px 22px !important;
-  align-items: center;
-  padding: 16px;
-  border-radius: 28px;
-  background:
-    linear-gradient(135deg, rgba(124,60,255,0.20), rgba(0,242,254,0.09)),
-    rgba(255,255,255,0.055);
-  border: 1px solid rgba(255,255,255,0.18);
-}
-
-.dark-mode .header {
-  background:
-    linear-gradient(135deg, rgba(0,242,254,0.10), rgba(124,60,255,0.13)),
-    rgba(2,6,23,0.45);
-  border-color: rgba(148,163,184,0.18);
-}
-
-.image-protection {
-  padding: 5px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-2), var(--accent-1), var(--accent-3));
-  box-shadow: 0 20px 38px rgba(0,242,254,0.16);
-}
-
-.header img {
-  width: clamp(96px, 13vw, 124px) !important;
-  height: clamp(96px, 13vw, 124px) !important;
-  border: 4px solid rgba(2,6,23,0.82) !important;
-  display: block;
-}
-
-.status-badge {
-  width: 25px !important;
-  height: 25px !important;
-  right: 4px !important;
-  bottom: 5px !important;
-}
-
-.hero-copy { min-width: 0; }
-
-#dynamicGreeting {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 7px 10px;
-  border-radius: 999px;
-  background: rgba(0,242,254,0.10);
-  border: 1px solid rgba(0,242,254,0.22);
-}
-
-.name {
-  font-size: clamp(30px, 6vw, 48px) !important;
-  line-height: 1.02;
-  letter-spacing: -1.7px;
-  background: linear-gradient(90deg, #fff, #b8f7ff 46%, #d9ccff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 14px 34px rgba(0,0,0,0.22);
-}
-
-.badge {
-  width: 24px !important;
-  height: 24px !important;
-  background: linear-gradient(135deg, #1877f2, #00f2fe) !important;
-  box-shadow: 0 8px 22px rgba(24,119,242,0.38);
-}
-
-.tagline {
-  font-size: clamp(15px, 2.3vw, 18px);
-  color: var(--text-muted);
-}
-
-.location-line,
-.visitor-counter {
-  color: rgba(255,255,255,0.86) !important;
-}
-
-.visitor-counter {
-  padding: 7px 12px !important;
-  background: rgba(35,165,89,0.11) !important;
-  border-color: rgba(35,165,89,0.24) !important;
-}
-
-.hire-me-btn {
-  border-radius: 999px !important;
-  padding: 13px 20px !important;
-  background: linear-gradient(135deg, var(--accent-3), var(--accent-1), var(--accent-2)) !important;
-  background-size: 180% 180% !important;
-  box-shadow: 0 18px 36px rgba(124,60,255,0.26) !important;
-}
-
-.section {
-  background:
-    linear-gradient(145deg, rgba(255,255,255,0.13), rgba(255,255,255,0.055)) !important;
-  border: 1px solid rgba(255,255,255,0.20) !important;
-  border-radius: 28px !important;
-  box-shadow: 0 18px 42px rgba(0,0,0,0.18) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  position: relative;
-  overflow: hidden;
-}
-
-.dark-mode .section,
-.dark-mode #contactInfoSection,
-.dark-mode #techSkillsSection,
-.dark-mode #contactSection {
-  background:
-    linear-gradient(145deg, rgba(15,23,42,0.74), rgba(2,6,23,0.54)) !important;
-  border: 1px solid rgba(148,163,184,0.18) !important;
-  box-shadow: 0 18px 42px rgba(0,0,0,0.34) !important;
-}
-
-.section::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(115deg, rgba(255,255,255,0.08), transparent 28% 72%, rgba(0,242,254,0.045));
-  pointer-events: none;
-}
-
-.section > * { position: relative; z-index: 1; }
-
-.social {
-  gap: 14px !important;
-}
-
-.social a {
-  min-height: 58px;
-  border-radius: 20px !important;
-  background: linear-gradient(145deg, rgba(255,255,255,0.13), rgba(255,255,255,0.055)) !important;
-  border: 1px solid rgba(255,255,255,0.18) !important;
-  box-shadow: 0 15px 34px rgba(0,0,0,0.16) !important;
-}
-
-.dark-mode .social a {
-  background: linear-gradient(145deg, rgba(15,23,42,0.78), rgba(2,6,23,0.55)) !important;
-  border-color: rgba(148,163,184,0.18) !important;
-  box-shadow: 0 15px 34px rgba(0,0,0,0.28) !important;
-}
-
-.social a i {
-  width: 34px;
-  height: 34px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.10);
-}
-
-.social a:hover,
-.goodat-card:hover,
-.hobby-card:hover {
-  transform: translateY(-5px);
-}
-
-.new-progress-track {
-  height: 11px;
-  background: rgba(255,255,255,0.09);
-  border: 1px solid rgba(255,255,255,0.09);
-}
-
-.new-progress-fill {
-  background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-3));
-  box-shadow: 0 0 16px rgba(0,242,254,0.36);
-}
-
-.goodat-card,
-.hobby-card {
-  border-radius: 18px !important;
-  min-height: 108px;
-  justify-content: center;
-  background: rgba(255,255,255,0.095) !important;
-}
-
-.glass-input {
-  background: rgba(255,255,255,0.085) !important;
-  border-color: rgba(255,255,255,0.20) !important;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
-}
-
-.glass-btn {
-  background: linear-gradient(135deg, var(--accent-1), var(--accent-2), var(--accent-3)) !important;
-  border-radius: 999px !important;
-}
-
-.back-to-top {
-  box-shadow: 0 18px 44px rgba(0,0,0,0.34) !important;
-}
-
-@media (max-width: 768px) {
-  body::before { inset: -35%; animation: none !important; opacity: 0.4; }
-  .parallax-wrapper { width: 100%; overflow: hidden; }
-  .container { width: 100% !important; max-width: 900px !important; padding: 0 12px !important; margin: 16px auto !important; box-sizing: border-box !important; }
-  .card { border-radius: 24px !important; transform: translateZ(0) !important; }
-  .top-controls {
-    top: 14px !important;
-    right: 14px !important;
-    transform: none !important;
-  }
-  #digital-wave { display: none; }
-  .goodat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
-  .header {
-    display: flex !important;
-    flex-direction: column;
-    grid-template-columns: 1fr !important;
-    text-align: center;
-    align-items: center;
-    justify-items: center;
-    padding-top: 56px;
-  }
-  .location-line,
-  .visitor-counter {
-    justify-content: center;
-  }
-}
-
-/* Technical Skills */
-#techSkillsSection {
-  background:
-    linear-gradient(145deg, rgba(255,255,255,0.16), rgba(255,255,255,0.065)) !important;
-  border: 1px solid rgba(0,242,254,0.28) !important;
-  box-shadow: 0 22px 58px rgba(0,242,254,0.12), 0 18px 42px rgba(0,0,0,0.18) !important;
-}
-
-.skill-category {
-  margin: 20px 0 12px;
-  padding: 10px 13px;
-  border-left: 4px solid var(--category-accent, #00f2fe);
-  border-radius: 12px;
-  background: linear-gradient(90deg, rgba(0,242,254,0.16), rgba(255,255,255,0.04));
-  color: #fff;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 1.3px;
-  text-transform: uppercase;
-  box-shadow: 0 0 20px rgba(0,242,254,0.16);
-}
-
-.skill-category:first-of-type { margin-top: 4px; }
-.skill-category.web-dev { --category-accent: #00f2fe; }
-.skill-category.programming { --category-accent: #a855f7; }
-.skill-category.tools { --category-accent: #ff8a4b; }
-.skill-category.other { --category-accent: #23a559; }
-
-.new-skill-row { margin-bottom: 14px; }
-.skill-label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 7px;
-  font-weight: 700;
-}
-.skill-label span:first-child {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.skill-label i { margin-right: 0 !important; font-size: 17px; }
-.skill-percent {
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(0,242,254,0.14);
-  border: 1px solid rgba(0,242,254,0.34);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 900;
-  box-shadow: 0 0 16px rgba(0,242,254,0.18);
-}
-.new-progress-track {
-  height: 9px;
-  background: rgba(255,255,255,0.10);
-  border-radius: 5px;
-  overflow: visible;
-  position: relative;
-}
-.new-progress-fill {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, var(--skill-accent, #6b4bff), #00f2fe);
-  border-radius: 5px;
-  transition: width 1.5s ease-in-out;
-  position: relative;
-  overflow: hidden;
-}
-/* What I'm Good At cards */
-.goodat-card {
-  background: linear-gradient(145deg, rgba(255,255,255,0.10), transparent) !important;
-  padding: 24px 14px !important;
-  border-radius: 18px !important;
-  border: 1px solid rgba(255,255,255,0.15) !important;
-  border-top: 3px solid var(--card-glow, #00f2fe) !important;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  font-size: 13.5px;
-  min-height: 130px;
-  text-align: center;
-  transition: all 0.3s ease;
-  cursor: default;
-  color: #fff;
-}
-.goodat-card i { font-size: 32px; color: var(--card-glow, #00f2fe); }
-.goodat-card:hover {
-  transform: translateY(-4px);
-  background: linear-gradient(145deg, color-mix(in srgb, var(--card-glow, #00f2fe) 20%, transparent), rgba(255,255,255,0.08)) !important;
-  border-color: rgba(255,255,255,0.22) !important;
-  box-shadow: 0 8px 28px rgba(var(--card-glow-rgb, 0, 242, 254), 0.35);
-}
-
-.about-section {
-  background-image:
-    radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px),
-    linear-gradient(145deg, rgba(255,255,255,0.13), rgba(255,255,255,0.055)) !important;
-  background-size: 18px 18px, auto !important;
-}
-
-.quote-block {
-  position: relative;
-  border: 1px solid transparent !important;
-  border-radius: 18px !important;
-  padding: 22px 24px !important;
-  background:
-    linear-gradient(rgba(27,20,62,0.78), rgba(18,28,54,0.76)) padding-box,
-    linear-gradient(135deg, #6b4bff, #00f2fe, #ff8a4b, #6b4bff) border-box !important;
-  background-size: auto, auto !important;
-}
-
-.quote-block p {
-  font-size: 16.5px !important;
-  line-height: 1.9 !important;
-}
-
-.quote-signature {
-  margin-top: 12px;
-  text-align: right;
-  color: rgba(255,255,255,0.74);
-  font-weight: 800;
-  font-size: 13px;
-}
-
-.hobbies-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 14px; }
-.section .hobbies-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important; gap: 12px !important; }
-/* Hobby cards */
-.hobby-card {
-  background: rgba(255,255,255,0.09);
-  border: 1px solid rgba(255,255,255,0.16);
-  border-radius: 14px;
-  padding: 18px 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  font-weight: 600;
-  font-size: 13px;
-  text-align: center;
-  transition: all 0.3s ease;
-  cursor: default;
-  color: #fff;
-}
-.hobby-card i { font-size: 28px; color: var(--hobby-color, #ff8a4b); }
-.hobby-card:hover {
-  transform: translateY(-4px) scale(1.05);
-  background: rgba(255,255,255,0.16);
-  border-color: var(--hobby-color, #ff8a4b);
-  box-shadow: 0 6px 18px rgba(255,138,75,0.25);
-}
-
-@media (max-width: 768px) {
-  .section .hobbies-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
-}
-
-
-#contactInfoSection {
-  background: linear-gradient(145deg, rgba(255,255,255,0.13), rgba(255,255,255,0.055)) !important;
-  border: 1px solid rgba(255,255,255,0.20) !important;
-  border-radius: 28px !important;
-  box-shadow: 0 18px 42px rgba(0,0,0,0.18) !important;
-  padding: 22px 24px !important;
-}
-.connect-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 12px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 800;
-  color: #23a559;
-  letter-spacing: 0.5px;
-  background: rgba(35,165,89,0.10);
-  border: 1px solid rgba(35,165,89,0.25);
-  margin-bottom: 14px;
-}
-.connect-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #23a559;
-  box-shadow: 0 0 8px rgba(35,165,89,0.45);
-}
-.contact-info-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 12px;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 700;
-  text-decoration: none;
-}
-.contact-info-row.email { word-break: break-all; }
-
-.contact-info-row.phone {
-  position: relative;
-  padding-left: 52px;
-  min-height: 40px;
-}
-.contact-info-row.phone::before {
-  content: "\f095";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0,242,254,0.12);
-  border: 1px solid rgba(0,242,254,0.28);
-  color: #00f2fe;
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-}
-.contact-icon-circle {
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-.contact-info-row.phone .contact-icon-circle {
-  background: rgba(0,242,254,0.12);
-  border: 1px solid rgba(0,242,254,0.28);
-  color: #00f2fe;
-}
-.contact-info-row.email .contact-icon-circle {
-  background: rgba(107,75,255,0.12);
-  border: 1px solid rgba(107,75,255,0.28);
-  color: #a855f7;
-}
-.contact-response-note {
-  color: rgba(255,255,255,0.55);
-  font-size: 12px;
-  margin-top: 14px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.contact-response-note i { color: #23a559; }
-
-
-.social a, .goodat-card, .hobby-card, .section, .icon-btn, .hire-me-btn, .glass-btn {
-  transition: all 0.28s cubic-bezier(0.34, 1.26, 0.64, 1) !important;
-}
-.social a:hover i { filter: drop-shadow(0 0 6px currentColor); }
-.section-heading, .section > div[style*="font-weight:800"] {
-  font-size: 17px !important;
-  letter-spacing: 0.3px !important;
-}
-.goodat-card, .hobby-card {
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 4px 16px rgba(0,0,0,0.12) !important;
-}
-@media (hover: hover) and (pointer: fine) {
-  .card:hover {
-    box-shadow: 0 36px 100px rgba(0,0,0,0.48), inset 0 1px 0 rgba(255,255,255,0.22) !important;
-  }
-}
-@media (max-width: 768px) {
-  .hire-me-btn { width: 100% !important; margin-top: 14px !important; }
-}
-
-.noscript-alert { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #000; color: #fff; z-index: 999999; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; text-align: center; padding: 20px; }
-</style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      color: var(--text);
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans Bengali", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 8% 8%, rgba(0, 120, 212, 0.18), transparent 30%),
+        radial-gradient(circle at 92% 0%, rgba(124, 58, 237, 0.16), transparent 29%),
+        radial-gradient(circle at 50% 100%, rgba(56, 189, 248, 0.22), transparent 34%),
+        linear-gradient(145deg, #ffffff 0%, var(--bg) 48%, var(--bg-strong) 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      opacity: 0.7;
+      background-image:
+        linear-gradient(rgba(0, 120, 212, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 120, 212, 0.055) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: linear-gradient(to bottom, #000 0%, transparent 78%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: auto -15vw -18vw auto;
+      width: 52vw;
+      height: 52vw;
+      min-width: 480px;
+      min-height: 480px;
+      z-index: -2;
+      background: conic-gradient(from 180deg, rgba(0, 120, 212, 0.24), rgba(56, 189, 248, 0.22), rgba(124, 58, 237, 0.16), rgba(0, 120, 212, 0.24));
+      border-radius: 50%;
+      filter: blur(30px);
+      animation: floatGlow 12s ease-in-out infinite alternate;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    .page-shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 72px; }
+
+    .topbar {
+      position: sticky;
+      top: 14px;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 14px;
+      margin-bottom: 36px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 14px 42px rgba(30, 84, 142, 0.13);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand-icon, .category-icon, .shortcut-os { display: inline-grid; place-items: center; flex: 0 0 auto; }
+    .brand-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: linear-gradient(145deg, #0078d4, #38bdf8);
+      box-shadow: 0 12px 26px rgba(0, 120, 212, 0.28);
+    }
+    .brand h1 { font-size: clamp(1rem, 2vw, 1.14rem); letter-spacing: -0.02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .brand p { margin-top: -2px; color: var(--muted); font-size: 0.82rem; }
+    .nav-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-chip, .hero-cta, .filter-btn, .copy-all {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--text);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease, background 0.2s ease;
+    }
+    .nav-chip { padding: 10px 14px; border-radius: 999px; font-size: 0.9rem; font-weight: 700; }
+    .nav-chip:hover, .filter-btn:hover, .hero-cta:hover, .copy-all:hover { transform: translateY(-2px); border-color: rgba(0, 120, 212, 0.32); box-shadow: var(--shadow-soft); }
+
+    .hero { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr); gap: 28px; align-items: stretch; margin-bottom: 28px; }
+    .hero-card, .control-panel, .category, .spotlight, .footer-card { border: 1px solid var(--line); background: var(--card); box-shadow: var(--shadow); backdrop-filter: blur(20px); }
+    .hero-card { position: relative; overflow: hidden; min-height: 520px; padding: clamp(28px, 5vw, 52px); border-radius: calc(var(--radius) + 10px); }
+    .hero-card::before { content: ""; position: absolute; inset: -42% -18% auto auto; width: 520px; height: 520px; background: radial-gradient(circle, rgba(0, 120, 212, 0.22), transparent 67%); pointer-events: none; }
+    .hero-card::after { content: ""; position: absolute; inset: auto auto -90px -80px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(246, 183, 60, 0.2), transparent 70%); pointer-events: none; }
+    .eyebrow { position: relative; display: inline-flex; align-items: center; gap: 10px; padding: 9px 13px; margin-bottom: 22px; border: 1px solid rgba(0, 120, 212, 0.18); border-radius: 999px; color: #075c9f; background: rgba(232, 245, 255, 0.82); font-size: 0.9rem; font-weight: 800; }
+    .hero h2 { position: relative; max-width: 780px; font-size: clamp(2.5rem, 7vw, 6.2rem); line-height: 0.95; letter-spacing: -0.075em; margin-bottom: 22px; }
+    .gradient-text { display: inline-block; background: linear-gradient(105deg, #0067b8 0%, #0078d4 38%, #7c3aed 78%, #f6b73c 112%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero-copy { position: relative; max-width: 700px; color: var(--muted); font-size: clamp(1rem, 2vw, 1.18rem); margin-bottom: 28px; }
+    .hero-actions { position: relative; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 10px; padding: 14px 18px; border-radius: 18px; font-weight: 850; }
+    .hero-cta.primary { border-color: transparent; color: #fff; background: linear-gradient(135deg, #0078d4, #38bdf8); box-shadow: 0 18px 34px rgba(0, 120, 212, 0.26); }
+    .hero-cta.secondary { color: #075c9f; }
+    .stats { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: auto; }
+    .stat { padding: 16px; border: 1px solid rgba(0, 120, 212, 0.14); border-radius: 22px; background: rgba(255, 255, 255, 0.76); }
+    .stat strong { display: block; font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1; color: #075c9f; }
+    .stat span { display: block; margin-top: 6px; color: var(--muted); font-size: 0.9rem; font-weight: 700; }
+
+    .windows-panel { position: relative; display: grid; align-content: space-between; min-height: 520px; padding: 20px; border: 1px solid rgba(0, 120, 212, 0.17); border-radius: calc(var(--radius) + 10px); overflow: hidden; background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(242,250,255,0.78)); box-shadow: var(--shadow); }
+    .window-glass { position: relative; min-height: 305px; padding: 18px; border: 1px solid rgba(255,255,255,0.84); border-radius: 30px; background: linear-gradient(135deg, rgba(0,120,212,0.94), rgba(56,189,248,0.9)); color: #fff; overflow: hidden; box-shadow: 0 24px 54px rgba(0,120,212,0.28); }
+    .window-glass::before, .window-glass::after { content: ""; position: absolute; border-radius: 999px; background: rgba(255,255,255,0.22); }
+    .window-glass::before { width: 260px; height: 260px; right: -118px; top: -96px; }
+    .window-glass::after { width: 160px; height: 160px; left: -74px; bottom: -70px; }
+    .browser-bar { position: relative; display: flex; align-items: center; gap: 8px; padding: 10px; border-radius: 16px; background: rgba(255,255,255,0.2); backdrop-filter: blur(12px); }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.72); }
+    .address { flex: 1; padding: 7px 10px; border-radius: 12px; color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.17); font-size: 0.76rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .window-content { position: relative; display: grid; place-items: center; min-height: 215px; text-align: center; }
+    .window-content .big-logo { width: 96px; height: 96px; filter: drop-shadow(0 18px 28px rgba(0,0,0,0.24)); animation: breathe 4.5s ease-in-out infinite; }
+    .window-content h3 { margin-top: 18px; font-size: 1.45rem; line-height: 1.18; }
+    .floating-keys { position: absolute; inset: 78px 18px auto; pointer-events: none; }
+    .floating-key { position: absolute; display: inline-flex; align-items: center; gap: 7px; padding: 8px 12px; border: 1px solid rgba(255,255,255,0.7); border-radius: 14px; color: #0f3150; background: rgba(255,255,255,0.78); box-shadow: 0 12px 22px rgba(0,61,108,0.14); font-size: 0.82rem; font-weight: 900; animation: keyFloat 5s ease-in-out infinite; }
+    .floating-key:nth-child(1) { top: 10px; left: 5px; }
+    .floating-key:nth-child(2) { top: 80px; right: 0; animation-delay: -1.2s; }
+    .floating-key:nth-child(3) { top: 178px; left: 28px; animation-delay: -2.4s; }
+    .tip-stack { display: grid; gap: 12px; margin-top: 16px; }
+    .tip { display: flex; gap: 12px; align-items: center; padding: 14px; border: 1px solid rgba(0,120,212,0.14); border-radius: 22px; background: rgba(255,255,255,0.76); }
+    .tip-icon { width: 44px; height: 44px; border-radius: 15px; display: grid; place-items: center; color: #fff; background: linear-gradient(145deg, #0078d4, #38bdf8); box-shadow: 0 12px 20px rgba(0,120,212,0.2); }
+    .tip strong { display: block; line-height: 1.15; }
+    .tip span { color: var(--muted); font-size: 0.88rem; }
+
+    .control-panel { position: sticky; top: 86px; z-index: 15; display: grid; gap: 16px; padding: 16px; margin: 26px 0 28px; border-radius: 28px; }
+    .search-box { position: relative; display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid rgba(0,120,212,0.2); border-radius: 20px; background: rgba(255,255,255,0.86); box-shadow: inset 0 1px 0 rgba(255,255,255,0.85); }
+    .search-box svg { color: var(--primary); flex: 0 0 auto; }
+    .search-box input { width: 100%; border: 0; outline: 0; color: var(--text); background: transparent; font-weight: 750; }
+    .search-box input::placeholder { color: #91a0b3; font-weight: 650; }
+    .filters { display: flex; flex-wrap: wrap; gap: 10px; }
+    .filter-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 13px; border-radius: 999px; font-size: 0.9rem; font-weight: 850; }
+    .filter-btn.active { color: #fff; border-color: transparent; background: linear-gradient(135deg, #0078d4, #38bdf8); box-shadow: 0 12px 22px rgba(0,120,212,0.22); }
+
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin: 46px 0 18px; }
+    .section-kicker { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 8px; color: #075c9f; font-size: 0.86rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.12em; }
+    .section-head h2 { font-size: clamp(1.7rem, 4vw, 3.1rem); line-height: 1.05; letter-spacing: -0.045em; }
+    .copy-all { display: inline-flex; align-items: center; gap: 8px; padding: 12px 14px; border-radius: 16px; color: #075c9f; font-weight: 900; white-space: nowrap; }
+    .shortcut-grid { display: grid; gap: 22px; }
+    .category { overflow: hidden; border-radius: var(--radius); }
+    .category.hidden, .shortcut-card.hidden { display: none; }
+    .category-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px; border-bottom: 1px solid var(--line); background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(235,248,255,0.72)); }
+    .category-title { display: flex; align-items: center; gap: 14px; }
+    .category-icon { width: 54px; height: 54px; border-radius: 18px; color: #fff; background: linear-gradient(145deg, var(--category-color, #0078d4), #38bdf8); box-shadow: 0 14px 26px rgba(0,120,212,0.18); }
+    .category h3 { font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.15; }
+    .category-subtitle { color: var(--muted); font-size: 0.92rem; font-weight: 650; }
+    .category-count { padding: 8px 11px; border: 1px solid rgba(0,120,212,0.16); border-radius: 999px; color: #075c9f; background: rgba(255,255,255,0.8); font-size: 0.86rem; font-weight: 900; white-space: nowrap; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); }
+    .shortcut-card { position: relative; display: grid; gap: 16px; min-height: 174px; padding: 20px; background: rgba(255,255,255,0.86); transition: transform 0.22s ease, background 0.22s ease, box-shadow 0.22s ease; }
+    .shortcut-card::before { content: ""; position: absolute; inset: 0; opacity: 0; background: radial-gradient(circle at 85% 18%, rgba(0,120,212,0.12), transparent 44%); transition: opacity 0.22s ease; }
+    .shortcut-card:hover { z-index: 2; transform: translateY(-4px) scale(1.01); background: #fff; box-shadow: var(--shadow-soft); }
+    .shortcut-card:hover::before { opacity: 1; }
+    .shortcut-top, .shortcut-action, .shortcut-keys, .shortcut-meta { position: relative; }
+    .shortcut-top { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+    .shortcut-action { font-size: 1.05rem; font-weight: 900; letter-spacing: -0.015em; }
+    .shortcut-note { margin-top: 4px; color: var(--muted); font-size: 0.88rem; font-weight: 620; }
+    .mini-icon { width: 38px; height: 38px; border-radius: 14px; display: grid; place-items: center; color: var(--category-color, #0078d4); background: rgba(0,120,212,0.08); border: 1px solid rgba(0,120,212,0.13); flex: 0 0 auto; }
+    .shortcut-keys { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+    .key { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 38px; padding: 7px 11px; border: 1px solid rgba(16,32,51,0.1); border-bottom-color: rgba(16,32,51,0.25); border-radius: 12px; color: #0f2842; background: linear-gradient(180deg, #ffffff, #f1f7ff); box-shadow: inset 0 1px 0 rgba(255,255,255,0.95), 0 4px 0 rgba(10,70,130,0.12), 0 10px 16px rgba(15,58,112,0.08); font-size: 0.88rem; font-weight: 950; line-height: 1; }
+    .key.win { color: #075c9f; border-color: rgba(0,120,212,0.2); background: linear-gradient(180deg, #f8fcff, #e8f5ff); }
+    .plus { color: #7b8798; font-weight: 900; }
+    .shortcut-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; color: #075c9f; font-size: 0.78rem; font-weight: 900; }
+    .copy-btn { display: inline-flex; align-items: center; gap: 6px; border: 0; color: var(--category-color, #0078d4); background: transparent; cursor: pointer; font-size: 0.83rem; font-weight: 950; }
+
+    .spotlight { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; overflow: hidden; margin-top: 32px; border-radius: var(--radius); background: var(--line); }
+    .spotlight-card { position: relative; padding: 28px; background: linear-gradient(145deg, rgba(255,255,255,0.92), rgba(242,250,255,0.82)); overflow: hidden; }
+    .spotlight-card h3 { display: flex; align-items: center; gap: 10px; font-size: 1.25rem; margin-bottom: 10px; }
+    .spotlight-card p { color: var(--muted); font-weight: 650; }
+    .pro-list { display: grid; gap: 12px; margin-top: 18px; list-style: none; }
+    .pro-list li { display: flex; align-items: center; gap: 10px; font-weight: 750; }
+    .check { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 8px; color: #fff; background: linear-gradient(145deg, var(--green), #6ee7b7); font-size: 0.78rem; }
+    .footer-card { position: relative; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 18px; align-items: center; margin-top: 34px; padding: clamp(24px, 4vw, 38px); border-radius: var(--radius); overflow: hidden; }
+    .footer-card h2 { font-size: clamp(1.65rem, 4vw, 3rem); line-height: 1.08; letter-spacing: -0.05em; margin-bottom: 12px; }
+    .footer-card p { color: var(--muted); font-weight: 650; }
+    .keyboard-art { position: relative; display: grid; gap: 10px; padding: 16px; border: 1px solid rgba(0,120,212,0.13); border-radius: 24px; background: rgba(255,255,255,0.7); box-shadow: inset 0 1px 0 rgba(255,255,255,0.86); }
+    .keyboard-row { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; }
+    .keyboard-row span { min-height: 34px; border: 1px solid rgba(0,120,212,0.14); border-radius: 10px; background: linear-gradient(180deg, #fff, #eef7ff); box-shadow: 0 4px 0 rgba(10,70,130,0.09); }
+    .keyboard-row:nth-child(2) { grid-template-columns: 1.25fr repeat(6, 1fr) 1.25fr; }
+    .keyboard-row:nth-child(3) { grid-template-columns: 1.6fr 1fr 1fr 2.2fr 1fr 1fr 1.6fr; }
+    .toast { position: fixed; left: 50%; bottom: 24px; z-index: 60; transform: translate(-50%, 18px); display: flex; align-items: center; gap: 10px; padding: 13px 16px; border: 1px solid rgba(0,120,212,0.2); border-radius: 999px; color: #075c9f; background: rgba(255,255,255,0.92); box-shadow: var(--shadow-soft); opacity: 0; pointer-events: none; transition: opacity 0.24s ease, transform 0.24s ease; backdrop-filter: blur(18px); font-weight: 900; }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+    .empty-state { display: none; padding: 34px; border: 1px dashed rgba(0,120,212,0.3); border-radius: var(--radius); color: var(--muted); background: rgba(255,255,255,0.65); text-align: center; font-weight: 750; }
+    .empty-state.show { display: block; }
+    .win-logo { width: 1em; height: 1em; display: inline-block; vertical-align: -0.12em; }
+    .scroll-progress { position: fixed; inset: 0 auto auto 0; z-index: 80; width: 100%; height: 4px; background: transparent; }
+    .scroll-progress span { display: block; width: 0%; height: 100%; background: linear-gradient(90deg, #0078d4, #38bdf8, #7c3aed); box-shadow: 0 0 18px rgba(0,120,212,0.34); }
+
+    @keyframes floatGlow { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(-8vw, -3vw, 0) scale(1.08); } }
+    @keyframes breathe { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-8px) scale(1.04); } }
+    @keyframes keyFloat { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-12px) rotate(1deg); } }
+
+    @media (max-width: 920px) {
+      .hero, .spotlight, .footer-card { grid-template-columns: 1fr; }
+      .hero-card, .windows-panel { min-height: auto; }
+      .control-panel { top: 82px; }
+    }
+    @media (max-width: 700px) {
+      .page-shell { width: min(100% - 22px, 1180px); padding-top: 12px; }
+      .topbar { align-items: flex-start; border-radius: 24px; }
+      .nav-actions { display: none; }
+      .stats, .cards { grid-template-columns: 1fr; }
+      .section-head, .category-header, .shortcut-top, .shortcut-meta { align-items: flex-start; flex-direction: column; }
+      .control-panel { position: relative; top: auto; }
+      .hero-card { padding: 24px; }
+      .floating-keys { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
 </head>
-
 <body>
-
-<noscript>
-  <style> .container, .scroll-progress-container, canvas, .top-controls, .back-to-top { display: none !important; } </style>
-  <div class="noscript-alert">⚠️ Please Enable JavaScript to View This Secure Portfolio ⚠️</div>
-</noscript>
-
-<div class="scroll-progress-container">
-  <div class="scroll-progress-bar" id="progressBar"></div>
-</div>
-
-<div class="copy-warning" id="copyWarning">
-  <i class="fas fa-ban" style="font-size: 40px; margin-bottom: 10px; color: #ff4b4b;"></i>
-  <p>Security Alert: Action Blocked!</p>
-</div>
-<div class="recording-overlay" id="recordingOverlay"></div>
-
-<canvas id="digital-wave" aria-hidden="true"></canvas>
-
-<div class="parallax-wrapper">
-  <div class="container" id="parallaxContainer">
-    <div class="card reveal visible" id="parallaxCard">
-      
-      <div class="top-controls">
-        <button class="icon-btn" id="themeToggle" title="Toggle Theme">
-          <i class="fas fa-moon"></i>
-        </button>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+  <main class="page-shell">
+    <nav class="topbar" aria-label="প্রধান মেনু">
+      <a class="brand" href="#top" aria-label="Windows shortcuts home">
+        <span class="brand-icon" aria-hidden="true"><svg class="win-logo" viewBox="0 0 64 64" role="img"><path fill="#fff" d="M6 12.5 28.5 9v21.8H6V12.5Zm27.8-4.3L58 4.5v26.3H33.8V8.2ZM6 35h22.5v20.4L6 51.9V35Zm27.8 0H58v25L33.8 56.2V35Z"/></svg></span>
+        <span><h1>Windows Shortcut Master</h1><p>Premium light guide</p></span>
+      </a>
+      <div class="nav-actions">
+        <a class="nav-chip" href="#shortcuts">All Shortcuts</a>
+        <a class="nav-chip" href="#pro-tips">Pro Tips</a>
+        <a class="nav-chip" href="#copy">Copy List</a>
       </div>
-      
-      <div class="header">
-        <div class="image-protection">
-          <img src="https://i.ibb.co.com/355Qy8KY/cropped-circle-image.png" alt="Profile" loading="lazy" />
-          <div class="status-badge" title="Online"></div>
-        </div>
-        
-        <div class="hero-copy">
-          <div id="dynamicGreeting" style="font-size: 13px; font-weight: bold; color: #00f2fe; margin-bottom: 4px; letter-spacing: 1px; text-transform: uppercase;"></div>
-          
-          <div class="name-badge">
-            <div class="name" id="easterEggTrigger" title="Click me 5 times!">Wasim Mahmood</div>
-            <div class="badge">✔</div>
-          </div>
-          <div class="tagline">Creative Developer & Tech Enthusiast</div>
-          <div class="location-line">
-            <i class="fa-solid fa-location-dot"></i>
-            Bhairab Bazar, Kishoreganj
-          </div>
-          <div class="visitor-counter">
-            <i class="fas fa-circle" style="color:#23a559;font-size:8px;animation:pulse 2s infinite;"></i> <span id="liveLabel" style="color:#23a559;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;">Live</span> &nbsp;·&nbsp; <i class="fas fa-chart-line"></i> <span id="visitCount">...</span> visitors
-          </div>
-        </div>
-        
-        <button id="hireMeBtn" class="hire-me-btn">
-          <i class="fas fa-rocket"></i> Hire Me
-        </button>
-      </div>
+    </nav>
 
-      <div class="social reveal">
-        <a class="fb" href="https://www.facebook.com/share/1DMBocK6Ff/" target="_blank"><i class="fa-brands fa-facebook"></i>Facebook</a>
-        <a class="ig" href="https://www.instagram.com/zaynmahin_?igsh=MW56OHVsNmo5anlxag==" target="_blank"><i class="fa-brands fa-instagram"></i>Instagram</a>
-        <a class="tt" href="https://www.tiktok.com/@zaynmahin__?_r=1&_t=ZS-92akIXzWl8s" target="_blank"><i class="fa-brands fa-tiktok"></i>TikTok</a>
-        <a class="tg" href="https://t.me/+8801772447277" target="_blank"><i class="fa-brands fa-telegram"></i>Telegram</a>
-        <a class="wa" href="https://wa.me/+8801772447277" target="_blank"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
-        <a class="tw" href="https://x.com/zaynmahin?fbclid=..." target="_blank"><i class="fa-brands fa-x-twitter"></i>X (Twitter)</a>
-        <a class="th" href="https://www.threads.com/@zaynmahin_" target="_blank"><i class="fa-brands fa-threads"></i>Threads</a>
-        <a class="pi" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-pinterest"></i>Pinterest</a>
-        <a class="gi" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
-        <a class="sc" href="YOUR_LINK" target="_blank"><i class="fa-brands fa fa-snapchat"></i>Snapchat</a>
-        <a class="lk" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
-        <a class="yt" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-youtube"></i>YouTube</a>
-        <a class="rd" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-reddit"></i>Reddit</a>
-        <a class="dc" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-discord"></i>Discord</a>
-        <a class="tw" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-twitch"></i>Twitch</a>
-        <a class="ve" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-vimeo"></i>Vimeo</a>
-        <a class="li" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-line"></i>Line</a>
-        <a class="we" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-weixin"></i>WeChat</a>
-        <a class="vi" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-viber"></i>Viber</a>
-        <a class="sk" href="YOUR_LINK" target="_blank"><i class="fa-brands fa-skype"></i>Skype</a>
-      </div>
-
-      <div class="section reveal" id="contactInfoSection" style="background:linear-gradient(145deg, rgba(255,255,255,0.13), rgba(255,255,255,0.055));border:1px solid rgba(255,255,255,0.20);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:28px;box-shadow:0 18px 42px rgba(0,0,0,0.18);padding:22px 24px;">
-        <div class="connect-badge"><span class="connect-dot"></span> Let's Connect</div>
-        <div class="section-heading" style="display:flex;align-items:center;gap:10px;font-weight:800;color:white;padding-left:14px;margin-bottom:14px;position:relative;font-size:17px;letter-spacing:0.3px;">
-          <span style="position:absolute;left:0;top:0;height:100%;width:4px;border-radius:4px;background:linear-gradient(180deg,#6b4bff,#00f2fe);"></span>
-          <i class="fas fa-address-card" style="color:var(--accent-2,#00f2fe);font-size:16px;"></i>
-          Contact Information
+    <section class="hero" id="top">
+      <div class="hero-card">
+        <div class="eyebrow"><svg class="win-logo" viewBox="0 0 64 64" aria-hidden="true"><path fill="currentColor" d="M6 12.5 28.5 9v21.8H6V12.5Zm27.8-4.3L58 4.5v26.3H33.8V8.2ZM6 35h22.5v20.4L6 51.9V35Zm27.8 0H58v25L33.8 56.2V35Z"/></svg> Windows 10 + Browser Shortcuts</div>
+        <h2>Keyboard Shortcut শেখা হবে <span class="gradient-text">Premium Style</span></h2>
+        <p class="hero-copy">দরকারি Windows, Browser, File Explorer, Text Editing ও Cool Extra shortcut এক জায়গায়। Search করুন, category filter করুন, আর এক ক্লিকে shortcut copy করুন।</p>
+        <div class="hero-actions">
+          <a class="hero-cta primary" href="#shortcuts"><svg class="win-logo" viewBox="0 0 64 64" aria-hidden="true"><path fill="currentColor" d="M6 12.5 28.5 9v21.8H6V12.5Zm27.8-4.3L58 4.5v26.3H33.8V8.2ZM6 35h22.5v20.4L6 51.9V35Zm27.8 0H58v25L33.8 56.2V35Z"/></svg> Shortcut দেখা শুরু করুন</a>
+          <button class="hero-cta secondary" type="button" id="randomShortcutBtn">Random Shortcut</button>
         </div>
-        <a class="contact-info-row phone" id="safePhone" href="#">Loading...</a>
-        <div class="contact-info-row email"><span class="contact-icon-circle"><i class="fa-solid fa-envelope"></i></span><span id="safeEmail">Loading...</span></div>
-        <div class="contact-response-note"><i class="fas fa-circle-check"></i><span>Usually responds within 24 hours</span></div>
-      </div>
-
-      <div class="section reveal" id="techSkillsSection" style="background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:28px;box-shadow:0 8px 24px rgba(0,0,0,0.18);padding:22px 24px;">
-        <div style="display:flex;align-items:center;gap:10px;font-weight:800;color:white;padding-left:14px;margin-bottom:18px;position:relative;">
-          <span style="position:absolute;left:0;top:0;height:100%;width:4px;border-radius:4px;background:linear-gradient(180deg,#6b4bff,#00f2fe);"></span>
-          <i class="fas fa-code" style="color:#00f2fe;font-size:16px;"></i>
-          Technical Skills
-        </div>
-
-        <div class="skill-category web-dev">Web Development</div>
-        <div class="new-skill-row" data-pct="85" style="--skill-accent:#e34f26;">
-          <div class="skill-label">
-            <span><i class="fab fa-html5" style="color:#e34f26;margin-right:7px;"></i>HTML</span><span class="skill-percent">85%</span>
-          </div>
-          <div class="new-progress-track"><div class="new-progress-fill" data-width="85"></div></div>
-        </div>
-        <div class="new-skill-row" data-pct="75" style="--skill-accent:#1572b6;">
-          <div class="skill-label">
-            <span><i class="fab fa-css3-alt" style="color:#1572b6;margin-right:7px;"></i>CSS</span><span class="skill-percent">75%</span>
-          </div>
-          <div class="new-progress-track"><div class="new-progress-fill" data-width="75"></div></div>
-        </div>
-        <div class="new-skill-row" data-pct="60" style="--skill-accent:#f7df1e;">
-          <div class="skill-label">
-            <span><i class="fab fa-js" style="color:#f7df1e;margin-right:7px;"></i>JavaScript</span><span class="skill-percent">60%</span>
-          </div>
-          <div class="new-progress-track"><div class="new-progress-fill" data-width="60"></div></div>
-        </div>
-        <div class="new-skill-row" data-pct="80" style="--skill-accent:#00f2fe;">
-          <div class="skill-label">
-            <span><i class="fas fa-globe" style="color:#00f2fe;margin-right:7px;"></i>Web Development</span><span class="skill-percent">80%</span>
-          </div>
-          <div class="new-progress-track"><div class="new-progress-fill" data-width="80"></div></div>
-        </div>
-
-        <div class="skill-category programming">Programming</div>
-        <div class="new-skill-row" data-pct="50" style="--skill-accent:#a855f7;">
-          <div class="skill-label">
-            <span><i class="fas fa-code" style="color:#a855f7;margin-right:7px;"></i>C / C++</span><span class="skill-percent">50%</span>
-          </div>
-          <div class="new-progress-track"><div class="new-progress-fill" data-width="50"></div></div>
-        </div>
-
-        <div class="skill-category tools">Tools & Technologies</div>
-        <div class="new-skill-row" data-pct="65" style="--skill-accent:#f05032;">
-          <div class="skill-label">
-            <span><i class="fab fa-github" style="color:#fff;margin-right:7px;"></i>Git & GitHub</span><span class="skill-percent">65%</span>
-          </div>
-          <div class="new-progress-track"><div class="new-progress-fill" data-width="65"></div></div>
-        </div>
-        <div class="new-skill-row" data-pct="90" style="--skill-accent:#007acc;">
-          <div class="skill-label">
-            <span><i class="fas fa-laptop-code" style="color:#007acc;margin-right:7px;"></i>VS Code</span><span class="skill-percent">90%</span>
-          </div>
-          <div class="new-progress-track"><div class="new-progress-fill" data-width="90"></div></div>
-        </div>
-        <div class="new-skill-row" data-pct="55" style="--skill-accent:#ff8a4b;">
-          <div class="skill-label">
-            <span><i class="fas fa-pen-nib" style="color:#ff8a4b;margin-right:7px;"></i>UI/UX Design</span><span class="skill-percent">55%</span>
-          </div>
-          <div class="new-progress-track"><div class="new-progress-fill" data-width="55"></div></div>
-        </div>
-
-        <div class="skill-category other">Other Skills</div>
-        <div class="new-skill-row" data-pct="65" style="--skill-accent:#23a559;">
-          <div class="skill-label">
-            <span><i class="fas fa-brain" style="color:#23a559;margin-right:7px;"></i>Problem Solving</span><span class="skill-percent">65%</span>
-          </div>
-          <div class="new-progress-track"><div class="new-progress-fill" data-width="65"></div></div>
-        </div>
-        <div class="new-skill-row" data-pct="90" style="--skill-accent:#22c55e;">
-          <div class="skill-label">
-            <span><i class="fas fa-desktop" style="color:#22c55e;margin-right:7px;"></i>Computer Basics</span><span class="skill-percent">90%</span>
-          </div>
-          <div class="new-progress-track"><div class="new-progress-fill" data-width="90"></div></div>
-        </div>
-        <div class="new-skill-row" data-pct="55" style="--skill-accent:#10b981;">
-          <div class="skill-label">
-            <span><i class="fas fa-network-wired" style="color:#10b981;margin-right:7px;"></i>Networking Basics</span><span class="skill-percent">55%</span>
-          </div>
-          <div class="new-progress-track"><div class="new-progress-fill" data-width="55"></div></div>
+        <div class="stats" aria-label="Shortcut stats">
+          <div class="stat"><strong id="totalCount">0</strong><span>Total shortcuts</span></div>
+          <div class="stat"><strong>5</strong><span>Premium category</span></div>
+          <div class="stat"><strong>1</strong><span>Single index file</span></div>
         </div>
       </div>
 
-      <div class="section reveal" style="background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:28px;box-shadow:0 8px 24px rgba(0,0,0,0.18);padding:22px 24px;">
-        <div style="display:flex;align-items:center;gap:10px;font-weight:800;color:white;padding-left:14px;margin-bottom:4px;position:relative;font-size:20px;">
-          <span style="position:absolute;left:0;top:0;height:100%;width:4px;border-radius:4px;background:linear-gradient(180deg,#6b4bff,#00f2fe);"></span>
-          <i class="fas fa-star" style="color:#00f2fe;font-size:18px;"></i>
-          What I'm Good At
+      <aside class="windows-panel" aria-label="Windows style preview">
+        <div class="window-glass">
+          <div class="browser-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="address">https://windows-shortcuts.local/master</span></div>
+          <div class="floating-keys" aria-hidden="true">
+            <span class="floating-key"><svg class="win-logo" viewBox="0 0 64 64"><path fill="currentColor" d="M6 12.5 28.5 9v21.8H6V12.5Zm27.8-4.3L58 4.5v26.3H33.8V8.2ZM6 35h22.5v20.4L6 51.9V35Zm27.8 0H58v25L33.8 56.2V35Z"/></svg> Win + D</span>
+            <span class="floating-key">Ctrl + Shift + T</span>
+            <span class="floating-key"><svg class="win-logo" viewBox="0 0 64 64"><path fill="currentColor" d="M6 12.5 28.5 9v21.8H6V12.5Zm27.8-4.3L58 4.5v26.3H33.8V8.2ZM6 35h22.5v20.4L6 51.9V35Zm27.8 0H58v25L33.8 56.2V35Z"/></svg> Win + V</span>
+          </div>
+          <div class="window-content"><div><svg class="big-logo" viewBox="0 0 64 64" aria-hidden="true"><path fill="#fff" d="M6 12.5 28.5 9v21.8H6V12.5Zm27.8-4.3L58 4.5v26.3H33.8V8.2ZM6 35h22.5v20.4L6 51.9V35Zm27.8 0H58v25L33.8 56.2V35Z"/></svg><h3>Fast work. Clean desktop. Pro control.</h3></div></div>
         </div>
-        <div style="font-size:13px; color:rgba(255,255,255,0.6); margin-top:4px;">Skills that define my approach</div>
-        <div class="goodat-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:14px;">
-          <div class="goodat-card" style="--card-glow:#00f2fe;--card-glow-rgb:0,242,254;"><i class="fas fa-comments"></i><span>Communication</span></div>
-          <div class="goodat-card" style="--card-glow:#4facfe;--card-glow-rgb:79,172,254;"><i class="fas fa-share-nodes"></i><span>Social Networking</span></div>
-          <div class="goodat-card" style="--card-glow:#f59e0b;--card-glow-rgb:245,158,11;"><i class="fas fa-bolt"></i><span>Fast Learning</span></div>
-          <div class="goodat-card" style="--card-glow:#a855f7;--card-glow-rgb:168,85,247;"><i class="fas fa-lightbulb"></i><span>Creative Thinking</span></div>
-          <div class="goodat-card" style="--card-glow:#ff8a4b;--card-glow-rgb:255,138,75;"><i class="fas fa-puzzle-piece"></i><span>Problem Solving</span></div>
-          <div class="goodat-card" style="--card-glow:#23a559;--card-glow-rgb:35,165,89;"><i class="fas fa-users"></i><span>Team Leadership</span></div>
-          <div class="goodat-card" style="--card-glow:#ef4444;--card-glow-rgb:239,68,68;"><i class="fas fa-clock"></i><span>Time Management</span></div>
-          <div class="goodat-card" style="--card-glow:#14b8a6;--card-glow-rgb:20,184,166;"><i class="fas fa-pen-fancy"></i><span>Documentation Writing</span></div>
+        <div class="tip-stack">
+          <div class="tip"><span class="tip-icon" aria-hidden="true">⌨</span><div><strong>Daily Shortcut Habit</strong><span>প্রতিদিন ৫টা shortcut practice করলেই speed বাড়বে।</span></div></div>
+          <div class="tip"><span class="tip-icon" aria-hidden="true">⊞</span><div><strong>Windows Icon Included</strong><span>Win shortcut গুলো Windows logo key সহ দেখানো হয়েছে।</span></div></div>
         </div>
+      </aside>
+    </section>
+
+    <section class="control-panel" aria-label="Shortcut controls">
+      <label class="search-box" for="shortcutSearch"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><input id="shortcutSearch" type="search" placeholder="Search করুন: Win + D, copy, refresh, desktop..." autocomplete="off" /></label>
+      <div class="filters" id="filters" aria-label="Category filters"></div>
+    </section>
+
+    <section id="shortcuts" aria-labelledby="shortcutTitle">
+      <div class="section-head">
+        <div><span class="section-kicker"><svg class="win-logo" viewBox="0 0 64 64" aria-hidden="true"><path fill="currentColor" d="M6 12.5 28.5 9v21.8H6V12.5Zm27.8-4.3L58 4.5v26.3H33.8V8.2ZM6 35h22.5v20.4L6 51.9V35Zm27.8 0H58v25L33.8 56.2V35Z"/></svg> Shortcut Library</span><h2 id="shortcutTitle">সব দরকারি shortcut এক জায়গায়</h2></div>
+        <button class="copy-all" type="button" id="copyAllBtn">Copy full list</button>
       </div>
+      <div class="shortcut-grid" id="shortcutGrid"></div>
+      <div class="empty-state" id="emptyState">কোনো shortcut পাওয়া যায়নি। অন্য keyword দিয়ে search করুন।</div>
+    </section>
 
-      <div class="section reveal about-section" style="background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:28px;box-shadow:0 8px 24px rgba(0,0,0,0.18);padding:22px 24px;">
-        <div style="display:flex;align-items:center;gap:10px;font-weight:800;color:white;padding-left:14px;margin-bottom:16px;position:relative;">
-          <span style="position:absolute;left:0;top:0;height:100%;width:4px;border-radius:4px;background:linear-gradient(180deg,#6b4bff,#00f2fe);"></span>
-          <i class="fas fa-user" style="color:#00f2fe;font-size:16px;"></i>
-          About Me
-        </div>
-        <div class="quote-block" style="border-left:4px solid #6b4bff;background:rgba(107,75,255,0.10);border-radius:0 14px 14px 0;padding:18px 20px;">
-          <i class="fas fa-quote-left" style="color:#6b4bff;font-size:20px;margin-bottom:8px;display:block;"></i>
-          <p style="font-style:italic;font-size:15.5px;line-height:1.8;color:rgba(255,255,255,0.93);margin:0;">A creative soul who loves learning and exploring new things. Always trying to improve myself and grow step by step. Passionate about technology, new experiences, and challenges that help me level up.</p>
-          <div class="quote-signature">— Wasim Mahmood</div>
-        </div>
-      </div>
+    <section class="spotlight" id="pro-tips" aria-label="Pro tips">
+      <div class="spotlight-card"><h3><svg class="win-logo" viewBox="0 0 64 64" aria-hidden="true"><path fill="#0078d4" d="M6 12.5 28.5 9v21.8H6V12.5Zm27.8-4.3L58 4.5v26.3H33.8V8.2ZM6 35h22.5v20.4L6 51.9V35Zm27.8 0H58v25L33.8 56.2V35Z"/></svg> Pro workflow</h3><p>কাজের সময় keyboard shortcut ব্যবহার করলে mouse movement কমে যায়, tab switching দ্রুত হয়, productivity অনেক বেড়ে যায়।</p><ul class="pro-list"><li><span class="check">✓</span>Browser: Ctrl + L দিয়ে address bar instantly select</li><li><span class="check">✓</span>Windows: Win + V দিয়ে clipboard history ব্যবহার</li><li><span class="check">✓</span>Files: F2 দিয়ে দ্রুত rename</li></ul></div>
+      <div class="spotlight-card" id="copy"><h3>Practice plan</h3><p>প্রথমে Browser shortcuts, তারপর Windows management, তারপর File Explorer ও Text Editing shortcuts practice করুন।</p><ul class="pro-list"><li><span class="check">✓</span>দিনে ৫ মিনিট practice</li><li><span class="check">✓</span>সবচেয়ে দরকারি shortcut bookmark করুন</li><li><span class="check">✓</span>Copy button দিয়ে list save করুন</li></ul></div>
+    </section>
 
-      <div class="section reveal" style="background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:28px;box-shadow:0 8px 24px rgba(0,0,0,0.18);padding:22px 24px;">
-        <div style="display:flex;align-items:center;gap:10px;font-weight:800;color:white;padding-left:14px;margin-bottom:4px;position:relative;">
-          <span style="position:absolute;left:0;top:0;height:100%;width:4px;border-radius:4px;background:linear-gradient(180deg,#6b4bff,#00f2fe);"></span>
-          <i class="fas fa-heart" style="color:#00f2fe;font-size:16px;"></i>
-          Hobbies &amp; Interests
-        </div>
-        <div class="hobbies-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:14px;">
-          <div class="hobby-card" style="--hobby-color:#ec4899;"><i class="fas fa-music"></i><span>Listening to Music</span></div>
-          <div class="hobby-card" style="--hobby-color:#00f2fe;"><i class="fas fa-laptop-code"></i><span>Programming &amp; Dev</span></div>
-          <div class="hobby-card" style="--hobby-color:#f97316;"><i class="fas fa-car"></i><span>Driving</span></div>
-          <div class="hobby-card" style="--hobby-color:#a855f7;"><i class="fas fa-microchip"></i><span>Tech &amp; Gadgets</span></div>
-          <div class="hobby-card" style="--hobby-color:#22c55e;"><i class="fas fa-book-open"></i><span>Learning New Skills</span></div>
-          <div class="hobby-card" style="--hobby-color:#38bdf8;"><i class="fas fa-desktop"></i><span>Hardware &amp; Tech</span></div>
-          <div class="hobby-card" style="--hobby-color:#84cc16;"><i class="fas fa-futbol"></i><span>Football Highlights</span></div>
-          <div class="hobby-card" style="--hobby-color:#fb923c;"><i class="fas fa-utensils"></i><span>Trying New Foods</span></div>
-          <div class="hobby-card" style="--hobby-color:#6366f1;"><i class="fas fa-mobile-screen"></i><span>Apps &amp; Tools</span></div>
-          <div class="hobby-card" style="--hobby-color:#ef4444;"><i class="fas fa-film"></i><span>Movies &amp; Series</span></div>
-        </div>
-      </div>
+    <footer class="footer-card">
+      <div><span class="section-kicker">Built for Windows lovers</span><h2>Light, clean, premium — shortcut শেখা এখন আরও সহজ।</h2><p>এই website পুরোটা HTML, CSS এবং JavaScript দিয়ে single <strong>index.html</strong> file-এ বানানো হয়েছে।</p></div>
+      <div class="keyboard-art" aria-hidden="true"><div class="keyboard-row"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="keyboard-row"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="keyboard-row"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+    </footer>
+  </main>
 
-      <div class="section reveal" id="contactSection" style="background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:28px;box-shadow:0 8px 24px rgba(0,0,0,0.18);padding:22px 24px;">
-        <div style="display:flex; justify-content:center; margin-bottom: 10px;">
-          <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_u25cckyh.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>
-        </div>
-        <strong style="text-align:center; font-size:20px;">Let's Work Together</strong>
-        <form id="contactForm">
-          <input class="glass-input" name="user_name" placeholder="Your Name" id="name" required>
-          <input class="glass-input" name="user_email" placeholder="Your Email" type="email" id="email" required>
-          
-          <input type="text" id="honeypot" style="display:none;" tabindex="-1" autocomplete="off" placeholder="Leave this empty">
+  <div class="toast" id="toast" role="status" aria-live="polite"><svg class="win-logo" viewBox="0 0 64 64" aria-hidden="true"><path fill="currentColor" d="M6 12.5 28.5 9v21.8H6V12.5Zm27.8-4.3L58 4.5v26.3H33.8V8.2ZM6 35h22.5v20.4L6 51.9V35Zm27.8 0H58v25L33.8 56.2V35Z"/></svg><span id="toastText">Copied</span></div>
 
-          <textarea class="glass-input" name="message" rows="4" placeholder="Type your message here..." id="message" required></textarea>
-          <button class="glass-btn" type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
-        </form>
-        <p style="text-align: center; margin-top: 10px; font-size: 14px;" id="formMessage"></p>
-      </div>
+  <script>
+    const WINDOWS_ICON = '<svg class="win-logo" viewBox="0 0 64 64" aria-hidden="true"><path fill="currentColor" d="M6 12.5 28.5 9v21.8H6V12.5Zm27.8-4.3L58 4.5v26.3H33.8V8.2ZM6 35h22.5v20.4L6 51.9V35Zm27.8 0H58v25L33.8 56.2V35Z"/></svg>';
+    const ICONS = {
+      browser: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21a9 9 0 1 0-8.18-5.25h7.42a3.6 3.6 0 0 0 6.14-1.58l2.75-4.76" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8.4h8.28M8.88 15.75 4.74 8.58M12 15.6a3.6 3.6 0 1 0 0-7.2 3.6 3.6 0 0 0 0 7.2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+      windows: WINDOWS_ICON,
+      files: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.5 7.4c0-1 .8-1.9 1.9-1.9h4l2 2h7.2c1 0 1.9.8 1.9 1.9v8.2c0 1-.8 1.9-1.9 1.9H5.4c-1 0-1.9-.8-1.9-1.9V7.4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3.8 10h16.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+      text: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5h14M12 5v14M8.5 19h7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+      extra: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.6 14.3 9l5.8.5-4.4 3.8 1.3 5.7-5-3-5 3 1.3-5.7-4.4-3.8L9.7 9 12 3.6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>'
+    };
 
-      <footer class="reveal">
-        ©️ <span id="year"></span> Wasim Mahmood Mia — All Rights Reserved
-      </footer>
-    </div>
-  </div>
-</div>
+    const categories = [
+      { id: "browser", title: "Tab & Browser Shortcuts", subtitle: "Chrome, Edge, Firefox সহ modern browser control", color: "#0078d4", icon: ICONS.browser, shortcuts: [["Ctrl + T", "নতুন tab", "New tab খুলুন"], ["Ctrl + W", "Current tab close", "Active tab বন্ধ করুন"], ["Ctrl + Shift + T", "বন্ধ tab আবার open", "Accidentally closed tab ফিরিয়ে আনুন"], ["Ctrl + Tab", "Next tab", "ডান পাশের tab-এ যান"], ["Ctrl + Shift + Tab", "Previous tab", "বাম পাশের tab-এ যান"], ["Ctrl + 1-9", "নির্দিষ্ট tab এ jump", "Number অনুযায়ী tab select"], ["Ctrl + N", "নতুন window", "Fresh browser window"], ["Ctrl + Shift + N", "Incognito/Private window", "Private browsing শুরু করুন"], ["F5", "Refresh", "Current page reload"], ["Ctrl + F5", "Hard refresh", "Cache bypass করে reload"], ["Ctrl + L", "Address bar select", "URL/search bar focus"], ["Ctrl + D", "Bookmark", "Page save/bookmark"], ["Ctrl + J", "Downloads", "Download list খুলুন"], ["Ctrl + H", "History", "Browsing history দেখুন"], ["Ctrl + U", "View source", "Page source দেখুন"], ["Ctrl + + / -", "Zoom in/out", "Page zoom control"], ["Ctrl + 0", "Zoom reset", "Default zoom-এ ফিরুন"], ["Alt + Left Arrow", "Back", "Previous page"], ["Alt + Right Arrow", "Forward", "Next page"]] },
+      { id: "windows", title: "Windows Shortcuts", subtitle: "Desktop, app switch, task view ও system tools", color: "#2563eb", icon: ICONS.windows, shortcuts: [["Win", "Start menu", "Start menu খুলুন"], ["Win + D", "Desktop show", "সব window minimize/restore"], ["Win + E", "File Explorer", "Explorer open"], ["Win + I", "Settings", "Windows Settings open"], ["Win + L", "PC lock", "Instant lock screen"], ["Win + R", "Run dialog", "Run command box"], ["Win + S", "Search", "Windows search"], ["Win + Tab", "Task view", "Open windows ও desktops দেখুন"], ["Win + ↑ ↓ ← →", "Window snap", "Window maximize/minimize/snap"], ["Win + Shift + S", "Screenshot select", "Snipping tool selection"], ["PrtSc", "Screenshot", "Screen capture"], ["Win + PrtSc", "Auto screenshot save", "Pictures folder-এ save"], ["Alt + Tab", "App switch", "Running apps switch"], ["Ctrl + Shift + Esc", "Task Manager", "Direct Task Manager open"], ["Alt + F4", "App close", "Active app/window close"], ["F2", "Rename", "Selected file/folder rename"], ["F5", "Refresh", "Desktop বা Explorer refresh"], ["Ctrl + A", "Select all", "সব item/text select"], ["Ctrl + C", "Copy", "Selected item copy"], ["Ctrl + V", "Paste", "Copied item paste"], ["Ctrl + X", "Cut", "Selected item cut"], ["Ctrl + Z", "Undo", "Last action undo"], ["Ctrl + Y", "Redo", "Undo করা action redo"], ["Delete", "Delete", "Recycle Bin-এ পাঠান"], ["Shift + Delete", "Permanently delete", "Recycle Bin ছাড়াই delete"]] },
+      { id: "files", title: "File Explorer", subtitle: "Folder navigation ও file management shortcuts", color: "#f59e0b", icon: ICONS.files, shortcuts: [["Ctrl + Shift + N", "New folder", "নতুন folder তৈরি করুন"], ["Alt + Enter", "Properties", "Selected item properties"], ["Backspace", "Previous folder", "আগের folder-এ ফিরুন"], ["Alt + Up Arrow", "Parent folder", "এক level উপরের folder"]] },
+      { id: "text", title: "Text Editing", subtitle: "Typing, selection ও document navigation", color: "#7c3aed", icon: ICONS.text, shortcuts: [["Ctrl + Backspace", "পুরো word delete", "Cursor-এর আগের word মুছুন"], ["Home / End", "Line start/end", "Line-এর শুরু/শেষে যান"], ["Ctrl + Home/End", "Document top/bottom", "Document-এর শুরু/শেষে jump"], ["Shift + Arrow", "Text select", "Keyboard দিয়ে text select"], ["Ctrl + Arrow", "Word jump", "Word ধরে cursor move"]] },
+      { id: "extra", title: "Cool Extra Shortcuts", subtitle: "Emoji, clipboard, game bar, magnifier ও virtual desktop", color: "#0ea5e9", icon: ICONS.extra, shortcuts: [["Win + .", "Emoji panel 😄", "Emoji, kaomoji, symbols"], ["Win + V", "Clipboard history", "Multiple copied item history"], ["Win + G", "Xbox game bar", "Screen recording/game tools"], ["Win + +", "Magnifier", "Screen zoom tool"], ["Win + Ctrl + D", "New virtual desktop", "নতুন desktop তৈরি"], ["Win + Ctrl + ←/→", "Desktop switch", "Virtual desktop switch"], ["Win + Ctrl + F4", "Virtual desktop close", "Current desktop বন্ধ"]] }
+    ];
 
-<button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+    const grid = document.getElementById("shortcutGrid");
+    const filters = document.getElementById("filters");
+    const search = document.getElementById("shortcutSearch");
+    const emptyState = document.getElementById("emptyState");
+    const totalCount = document.getElementById("totalCount");
+    const toast = document.getElementById("toast");
+    const toastText = document.getElementById("toastText");
+    const scrollProgress = document.getElementById("scrollProgress");
+    let activeCategory = "all";
+    let toastTimer;
 
-<div class="game-overlay" id="gameOverlay">
-  <button class="close-game" id="closeGame">&times;</button>
-  <h2>🕹️ SECRET TERMINAL UNLOCKED 🕹️</h2>
-  <p style="color: #fff; margin-bottom: 20px;">You entered the Konami Code!</p>
-  <div style="background: #000; padding: 20px; border: 2px solid #0f0; border-radius: 10px; color: #0f0;">
-    <p>> HACKING MAINFRAME...</p>
-    <p>> ACCESS GRANTED.</p>
-    <p>> CONGRATULATIONS! YOU FOUND THE HIDDEN EASTER EGG.</p>
-    <br>
-    <p style="text-align: center; animation: pulse 1s infinite;">System Overridden. Enjoy the Matrix.</p>
-  </div>
-</div>
-
-<script>
-// =================== EMAILJS INITIALIZATION ===================
-emailjs.init("esoedtqbzwOd78RIS");
-
-// =================== SOUND EFFECTS (UI Audio) ===================
-const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-
-function playClickSound() {
-  if (audioCtx.state === 'suspended') audioCtx.resume();
-  const osc = audioCtx.createOscillator();
-  const gainNode = audioCtx.createGain();
-  
-  osc.type = 'sine';
-  osc.frequency.setValueAtTime(800, audioCtx.currentTime);
-  osc.frequency.exponentialRampToValueAtTime(300, audioCtx.currentTime + 0.1);
-  
-  // Adding volume control so it sounds nice
-  gainNode.gain.setValueAtTime(0.2, audioCtx.currentTime);
-  gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.1);
-  
-  osc.connect(gainNode);
-  gainNode.connect(audioCtx.destination);
-  
-  osc.start();
-  osc.stop(audioCtx.currentTime + 0.1);
-}
-
-document.querySelectorAll('a, button').forEach(btn => {
-  btn.addEventListener('click', () => { playClickSound(); });
-});
-
-// =================== GAMIFICATION (Konami Code) ===================
-const konamiCode = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
-let konamiIndex = 0;
-document.addEventListener('keydown', (e) => {
-  if (e.key === konamiCode[konamiIndex]) {
-    konamiIndex++;
-    if (konamiIndex === konamiCode.length) {
-      document.getElementById('gameOverlay').style.display = 'flex';
-      document.body.style.background = "#000";
-      document.querySelectorAll('.card, .section').forEach(el => el.style.borderColor = "#0f0");
-      konamiIndex = 0; // reset
+    function splitKeys(shortcut) {
+      if (shortcut === "Ctrl + + / -") return ["Ctrl", "+ / -"];
+      if (shortcut === "Win + +") return ["Win", "+"];
+      return shortcut.replaceAll("↑", "Arrow Up").replaceAll("↓", "Arrow Down").replaceAll("←", "Arrow Left").replaceAll("→", "Arrow Right").split(/\s*\+\s*/).map((part) => part.trim()).filter(Boolean);
     }
-  } else {
-    konamiIndex = 0;
-  }
-});
-document.getElementById('closeGame').addEventListener('click', () => {
-  document.getElementById('gameOverlay').style.display = 'none';
-});
-
-// ====================================================================
-// =================== ORIGINAL SCRIPT CONTINUES ======================
-// ====================================================================
-
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// DYNAMIC GREETING
-const hr = new Date().getHours();
-let greeting = "Good Evening 🌙";
-if (hr < 12) greeting = "Good Morning ☀️";
-else if (hr < 18) greeting = "Good Afternoon 🌤️";
-document.getElementById('dynamicGreeting').innerText = greeting;
-
-// ANTI-SCRAPING (HIDDEN CONTACT INFO)
-const pD = atob('MDE2MjA0MzQ3OTQ=');
-const eD = atob('d2FzaW1tYWhtb29kbWlhQGhvdG1haWwuY29t');
-const safePhoneEl = document.getElementById('safePhone');
-safePhoneEl.innerText = pD;
-safePhoneEl.href = 'tel:' + pD;
-document.getElementById('safeEmail').innerText = eD;
-
-// EASTER EGG (MINI GAME / MATRIX EFFECT)
-let easterEggCount = 0;
-document.getElementById('easterEggTrigger').addEventListener('click', function() {
-  easterEggCount++;
-  if(easterEggCount === 5) {
-    alert("💻 Easter Egg Unlocked! Matrix Hacker Mode Activated!");
-    document.body.style.background = "#000";
-    document.body.style.color = "#0f0";
-    document.querySelectorAll('.card, .section, .social a').forEach(el => {
-      el.style.border = "1px solid #0f0";
-      el.style.background = "rgba(0, 255, 0, 0.05)";
-    });
-    document.querySelectorAll('.glass-input, .glass-btn, .status-badge').forEach(el => {
-      el.style.borderColor = "#0f0";
-      el.style.boxShadow = "0 0 10px #0f0";
-    });
-    easterEggCount = 0;
-  }
-});
-
-// SCROLL PROGRESS & BACK TO TOP — smooth with RAF
-let ticking = false;
-window.addEventListener('scroll', function() {
-  if (!ticking) {
-    requestAnimationFrame(function() {
-      let winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      let scrolled = height > 0 ? (winScroll / height) * 100 : 0;
-      document.getElementById("progressBar").style.width = scrolled + "%";
-      
-      const backToTop = document.getElementById('backToTop');
-      if (winScroll > 300) { backToTop.classList.add('visible'); } 
-      else { backToTop.classList.remove('visible'); }
-      ticking = false;
-    });
-    ticking = true;
-  }
-}, { passive: true });
-
-// =================== REAL-TIME VISITOR COUNTER ===================
-(function() {
-  const visitEl = document.getElementById('visitCount');
-  let displayedCount = 0;
-
-  function animateCount(target) {
-    const start = displayedCount;
-    const diff = target - start;
-    if (diff === 0) return;
-    const duration = 1200;
-    const startTime = performance.now();
-    function step(now) {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const ease = 1 - Math.pow(1 - progress, 3);
-      displayedCount = Math.round(start + diff * ease);
-      visitEl.innerText = displayedCount.toLocaleString();
-      if (progress < 1) requestAnimationFrame(step);
+    function renderKeys(shortcut) {
+      return splitKeys(shortcut).map((key, index) => {
+        const isWin = key.toLowerCase() === "win";
+        const label = isWin ? `${WINDOWS_ICON}<span>Win</span>` : key;
+        return `${index ? '<span class="plus">+</span>' : ""}<span class="key ${isWin ? "win" : ""}">${label}</span>`;
+      }).join("");
     }
-    requestAnimationFrame(step);
-  }
-
-  function fetchCount(increment) {
-    const url = increment
-      ? 'https://api.counterapi.dev/v1/wasim_portfolio/visits/up'
-      : 'https://api.counterapi.dev/v1/wasim_portfolio/visits';
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        if (data && data.count) animateCount(data.count);
-      })
-      .catch(() => { visitEl.innerText = '1,204+'; });
-  }
-
-  // First load: increment count
-  fetchCount(true);
-
-  // Refresh count every 30 seconds (no increment, just read)
-  setInterval(() => fetchCount(false), 30000);
-})();
-
-// HIRE ME CONFETTI
-document.getElementById('hireMeBtn').addEventListener('click', function() {
-  confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#00f2fe', '#4facfe', '#6b4bff', '#ff8a4b'] });
-  document.getElementById('contactSection').scrollIntoView({ behavior: 'smooth' });
-});
-
-// TIME-BASED THEME TOGGLE
-const themeToggle = document.getElementById('themeToggle');
-const themeIcon = themeToggle.querySelector('i');
-function applyAutoTheme() {
-  const savedTheme = localStorage.getItem('theme');
-  if (!savedTheme) {
-    if (hr >= 18 || hr < 6) { document.body.classList.add('dark-mode'); themeIcon.className = 'fas fa-sun'; } 
-    else { document.body.classList.remove('dark-mode'); themeIcon.className = 'fas fa-moon'; }
-  } else if (savedTheme === 'dark') { document.body.classList.add('dark-mode'); themeIcon.className = 'fas fa-sun'; }
-}
-applyAutoTheme();
-
-themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  if (document.body.classList.contains('dark-mode')) { themeIcon.className = 'fas fa-sun'; localStorage.setItem('theme', 'dark'); } 
-  else { themeIcon.className = 'fas fa-moon'; localStorage.setItem('theme', 'light'); }
-});
-
-// ANIMATIONS & FORM
-const reveals = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver(e => {
-  e.forEach(x => { 
-    if(x.isIntersecting){
-      x.target.classList.add('visible');
-      if(x.target.querySelector('.progress-bar div')) {
-        const progressBars = x.target.querySelectorAll('.progress-bar div');
-        progressBars.forEach(bar => {
-          const width = bar.style.width;
-          bar.style.width = '0%';
-          setTimeout(() => { bar.style.width = width; }, 100);
+    function getSearchText(category, shortcut) { return `${category.title} ${category.subtitle} ${shortcut.join(" ")}`.toLowerCase(); }
+    function renderFilters() {
+      const total = categories.reduce((sum, category) => sum + category.shortcuts.length, 0);
+      totalCount.textContent = total;
+      filters.innerHTML = [`<button class="filter-btn active" type="button" data-filter="all">${WINDOWS_ICON} All (${total})</button>`, ...categories.map((category) => `<button class="filter-btn" type="button" data-filter="${category.id}">${category.icon} ${category.title.split(" ")[0]} (${category.shortcuts.length})</button>`)].join("");
+    }
+    function renderShortcuts() {
+      grid.innerHTML = categories.map((category) => `<article class="category" data-category="${category.id}" style="--category-color: ${category.color}"><header class="category-header"><div class="category-title"><span class="category-icon" aria-hidden="true">${category.icon}</span><div><h3>${category.title}</h3><p class="category-subtitle">${category.subtitle}</p></div></div><span class="category-count">${WINDOWS_ICON} ${category.shortcuts.length} shortcuts</span></header><div class="cards">${category.shortcuts.map((shortcut, index) => `<article class="shortcut-card" data-search="${getSearchText(category, shortcut)}" data-shortcut="${shortcut[0]}" data-action="${shortcut[1]}"><div class="shortcut-top"><div><h4 class="shortcut-action">${shortcut[1]}</h4><p class="shortcut-note">${shortcut[2]}</p></div><span class="mini-icon" aria-hidden="true">${category.id === "windows" || shortcut[0].includes("Win") ? WINDOWS_ICON : category.icon}</span></div><div class="shortcut-keys" aria-label="${shortcut[0]}">${renderKeys(shortcut[0])}</div><div class="shortcut-meta"><span class="badge">${WINDOWS_ICON} Shortcut #${index + 1}</span><button class="copy-btn" type="button" data-copy="${shortcut[0]} → ${shortcut[1]}">Copy</button></div></article>`).join("")}</div></article>`).join("");
+    }
+    function applyFilters() {
+      const query = search.value.trim().toLowerCase();
+      let visibleCards = 0;
+      document.querySelectorAll(".category").forEach((categoryEl) => {
+        const categoryId = categoryEl.dataset.category;
+        let categoryHasVisibleCard = false;
+        categoryEl.querySelectorAll(".shortcut-card").forEach((card) => {
+          const matchesCategory = activeCategory === "all" || activeCategory === categoryId;
+          const matchesSearch = !query || card.dataset.search.includes(query);
+          const isVisible = matchesCategory && matchesSearch;
+          card.classList.toggle("hidden", !isVisible);
+          if (isVisible) { categoryHasVisibleCard = true; visibleCards += 1; }
         });
-      }
+        categoryEl.classList.toggle("hidden", !categoryHasVisibleCard);
+      });
+      emptyState.classList.toggle("show", visibleCards === 0);
     }
-  });
-}, {threshold: .15});
-reveals.forEach(r => io.observe(r));
-
-// Mobile/webview fix: guarantee main profile card is always visible on load
-document.addEventListener('DOMContentLoaded', function() {
-  var mainCard = document.getElementById('parallaxCard');
-  if (mainCard) mainCard.classList.add('visible');
-});
-
-backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-
-// =================== EMAILJS FORM SUBMISSION ===================
-const contactForm = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
-
-contactForm.addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  if(document.getElementById('honeypot').value !== "") {
-    formMessage.innerHTML = '<i class="fas fa-robot fa-bounce"></i> Bot activity detected. Access denied.';
-    formMessage.style.color = "#ff4b4b";
-    return;
-  }
-
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const message = document.getElementById('message').value;
-  if(!name || !email || !message) { 
-    formMessage.innerHTML = '<i class="fas fa-exclamation-circle fa-beat"></i> Please fill all fields!'; 
-    formMessage.style.color = "#ff8a4b"; 
-    return; 
-  }
-  
-  formMessage.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending message...'; 
-  formMessage.style.color = "#1f9bff";
-
-  // Use the specific EmailJS IDs
-  emailjs.sendForm('service_tj7usqd', 'template_165bf11', this)
-    .then(function() {
-      formMessage.innerHTML = '<i class="fas fa-check-circle fa-beat"></i> Message sent successfully!'; 
-      formMessage.style.color = "#25D366";
-      contactForm.reset();
-      setTimeout(() => { formMessage.innerHTML = ""; }, 4000);
-    }, function(error) {
-      formMessage.innerHTML = '<i class="fas fa-times-circle fa-shake"></i> Failed to send message. Please try again.'; 
-      formMessage.style.color = "#ff4b4b";
-      console.log('FAILED...', error);
-    });
-});
-
-(function() {
-  const canvas = document.getElementById('digital-wave');
-  const ctx = canvas.getContext('2d');
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const mobileQuery = window.matchMedia('(max-width: 768px)');
-  const coarsePointer = window.matchMedia('(pointer: coarse)');
-  const useStaticBackground = reduceMotion.matches || mobileQuery.matches || coarsePointer.matches;
-  const useFullAnimation = !useStaticBackground;
-  const targetFPS = 30;
-  const frameInterval = 1000 / targetFPS;
-  let width = 0;
-  let height = 0;
-  let dpr = 1;
-  let frame = 0;
-  let lastFrameTime = 0;
-  let dots = [];
-
-  function resizeWave() {
-    dpr = Math.min(window.devicePixelRatio || 1, useFullAnimation ? 1.5 : 1);
-    width = window.innerWidth;
-    height = window.innerHeight;
-    canvas.width = Math.floor(width * dpr);
-    canvas.height = Math.floor(height * dpr);
-    canvas.style.width = width + 'px';
-    canvas.style.height = height + 'px';
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const dotCount = useFullAnimation ? Math.min(12, Math.max(6, Math.floor(width / 90))) : 0;
-    dots = Array.from({ length: dotCount }, () => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      speed: 0.12 + Math.random() * 0.18,
-      size: 0.9 + Math.random() * 1.8,
-      alpha: 0.12 + Math.random() * 0.18
-    }));
-  }
-
-  function drawWaveLine(index, color, amplitude, speed, offset) {
-    ctx.beginPath();
-    const step = useFullAnimation ? 36 : 56;
-    for (let x = -60; x <= width + 60; x += step) {
-      const y = height * (0.24 + index * 0.13)
-        + Math.sin((x * 0.008) + frame * speed + offset) * amplitude
-        + Math.sin((x * 0.016) + frame * speed * 0.55 + offset) * (amplitude * 0.25);
-      if (x === -60) ctx.moveTo(x, y);
-      else ctx.lineTo(x, y);
-    }
-    ctx.strokeStyle = color;
-    ctx.lineWidth = 1.2;
-    ctx.shadowColor = color;
-    ctx.shadowBlur = useFullAnimation ? 9 : 0;
-    ctx.stroke();
-  }
-
-  function drawDigitalWave(now) {
-    requestAnimationFrame(drawDigitalWave);
-    if (document.hidden || now - lastFrameTime < frameInterval) return;
-    lastFrameTime = now - ((now - lastFrameTime) % frameInterval);
-
-    ctx.clearRect(0, 0, width, height);
-    ctx.globalCompositeOperation = 'lighter';
-    ctx.shadowBlur = 0;
-
-    drawWaveLine(0, 'rgba(0, 242, 254, 0.34)', 22, 0.011, 0);
-    drawWaveLine(1, 'rgba(79, 172, 254, 0.26)', 27, 0.009, 1.7);
-    drawWaveLine(2, 'rgba(107, 75, 255, 0.22)', 32, 0.007, 3.4);
-    if (useFullAnimation) drawWaveLine(3, 'rgba(0, 242, 254, 0.16)', 24, 0.006, 5.1);
-
-    dots.forEach(dot => {
-      dot.x += dot.speed;
-      dot.y += Math.sin(frame * 0.016 + dot.x * 0.01) * 0.08;
-      if (dot.x > width + 10) dot.x = -10;
-      ctx.beginPath();
-      ctx.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0, 242, 254, ${dot.alpha})`;
-      ctx.shadowColor = 'rgba(0, 242, 254, 0.55)';
-      ctx.shadowBlur = 8;
-      ctx.fill();
-    });
-
-    ctx.globalCompositeOperation = 'source-over';
-    frame += 1;
-  }
-
-  function drawStaticWave() {
-    ctx.clearRect(0, 0, width, height);
-    ctx.globalCompositeOperation = 'lighter';
-    frame = 18;
-    drawWaveLine(0, 'rgba(0, 242, 254, 0.20)', 18, 0, 0);
-    drawWaveLine(1, 'rgba(79, 172, 254, 0.16)', 22, 0, 1.7);
-    drawWaveLine(2, 'rgba(107, 75, 255, 0.14)', 26, 0, 3.4);
-    ctx.globalCompositeOperation = 'source-over';
-  }
-
-  resizeWave();
-  if (useStaticBackground) {
-    drawStaticWave();
-    if (mobileQuery.matches || coarsePointer.matches) canvas.style.display = 'none';
-    else canvas.style.opacity = '0.38';
-  } else {
-    requestAnimationFrame(drawDigitalWave);
-    window.addEventListener('resize', resizeWave, { passive: true });
-  }
-})();
-
-// ===== NEW SKILL PROGRESS BARS =====
-(function() {
-  const skillSection = document.getElementById('techSkillsSection');
-  if (!skillSection) return;
-  const fills = skillSection.querySelectorAll('.new-progress-fill');
-  const skillObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        fills.forEach(function(fill) {
-          const target = fill.getAttribute('data-width');
-          fill.style.width = '0%';
-          setTimeout(function() { fill.style.width = target + '%'; }, 100);
-        });
-        skillObserver.unobserve(entry.target);
+    async function copyText(text, message = "Copied") {
+      try { await navigator.clipboard.writeText(text); }
+      catch (error) {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        textarea.remove();
       }
+      toastText.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 1800);
+    }
+    function copyFullList() {
+      const text = categories.map((category) => `${category.title}\n${category.shortcuts.map((shortcut) => `- ${shortcut[0]} → ${shortcut[1]} (${shortcut[2]})`).join("\n")}`).join("\n\n");
+      copyText(text, "Full shortcut list copied");
+    }
+    function pickRandomShortcut() {
+      const all = categories.flatMap((category) => category.shortcuts.map((shortcut) => ({ category, shortcut })));
+      const item = all[Math.floor(Math.random() * all.length)];
+      activeCategory = item.category.id;
+      search.value = item.shortcut[1];
+      document.querySelectorAll(".filter-btn").forEach((button) => button.classList.toggle("active", button.dataset.filter === activeCategory));
+      applyFilters();
+      document.getElementById("shortcuts").scrollIntoView({ behavior: "smooth", block: "start" });
+      copyText(`${item.shortcut[0]} → ${item.shortcut[1]}`, "Random shortcut selected");
+    }
+    filters.addEventListener("click", (event) => {
+      const button = event.target.closest(".filter-btn");
+      if (!button) return;
+      activeCategory = button.dataset.filter;
+      filters.querySelectorAll(".filter-btn").forEach((filterButton) => filterButton.classList.remove("active"));
+      button.classList.add("active");
+      applyFilters();
     });
-  }, { threshold: 0.15 });
-  skillObserver.observe(skillSection);
-})();
-
-!function(){const e=document;function t(){const e=document.getElementById("copyWarning");e.style.display="block",setTimeout((()=>{e.style.display="none"}),2e3)}function o(){const e=document.getElementById("recordingOverlay");e.style.display="block",setTimeout((()=>{e.style.display="none"}),3e3)}e.addEventListener("selectstart",(e=>{"INPUT"!==e.target.tagName&&"TEXTAREA"!==e.target.tagName&&(e.preventDefault(),t())})),e.addEventListener("copy",(e=>{e.preventDefault(),t()})),e.addEventListener("cut",(e=>{e.preventDefault(),t()})),e.addEventListener("contextmenu",(e=>{"INPUT"!==e.target.tagName&&"TEXTAREA"!==e.target.tagName&&(e.preventDefault(),t())})),e.addEventListener("dragstart",(e=>{"IMG"!==e.target.tagName&&"A"!==e.target.tagName||e.preventDefault()})),e.addEventListener("keydown",(e=>{e.ctrlKey&&["c","v","x","a","s","p"].includes(e.key.toLowerCase())&&"INPUT"!==e.target.tagName&&"TEXTAREA"!==e.target.tagName&&(e.preventDefault(),t()),"PrintScreen"===e.key&&(e.preventDefault(),t(),o()),"F12"===e.key&&(e.preventDefault(),t())})),setInterval((()=>{window.mediaDevices&&navigator.mediaDevices.getDisplayMedia&&o()}),5e3),window.addEventListener("blur",(()=>{e.body.style.filter="blur(3px)",e.body.style.transition="filter 0.3s ease"})),window.addEventListener("focus",(()=>{e.body.style.filter="none"})),console.log("%cStop!","color: red; font-size: 50px; font-weight: bold; text-shadow: 2px 2px 0 #000;"),console.log("%cThis is a browser feature intended for developers.","font-size: 16px; color: #fff; background: #000; padding: 10px; border-radius: 5px;")}();
-</script>
+    search.addEventListener("input", applyFilters);
+    grid.addEventListener("click", (event) => {
+      const button = event.target.closest(".copy-btn");
+      if (!button) return;
+      copyText(button.dataset.copy, "Shortcut copied");
+    });
+    document.getElementById("copyAllBtn").addEventListener("click", copyFullList);
+    document.getElementById("randomShortcutBtn").addEventListener("click", pickRandomShortcut);
+    window.addEventListener("scroll", () => {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = height > 0 ? (scrollTop / height) * 100 : 0;
+      scrollProgress.style.width = `${progress}%`;
+    }, { passive: true });
+    renderFilters();
+    renderShortcuts();
+    applyFilters();
+  </script>
 </body>
 </html>
